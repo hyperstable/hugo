@@ -1,7 +1,6 @@
 ---
 weight: 190
 title: "Interest rates"
-description: ""
 icon: "article"
 date: "2025-06-07T09:43:50+02:00"
 lastmod: "2025-06-07T09:43:50+02:00"
@@ -9,6 +8,7 @@ draft: false
 toc: false
 katex: true
 ---
+# USH-based intereest rates
 
 Interest charged to borrowers is obtained as the sum of the following components:
 

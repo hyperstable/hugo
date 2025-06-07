@@ -1,13 +1,13 @@
 ---
 weight: 220
 title: "Collateral types"
-description: ""
 icon: "article"
 date: "2025-06-07T09:44:18+02:00"
 lastmod: "2025-06-07T09:44:18+02:00"
 draft: false
 toc: false
 ---
+# Collateral types
 
 Hyperstable supports the following assets as collateral:
 

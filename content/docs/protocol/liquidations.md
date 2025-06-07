@@ -1,13 +1,13 @@
 ---
 weight: 200
 title: "Liquidations"
-description: ""
 icon: "article"
 date: "2025-06-07T09:44:00+02:00"
 lastmod: "2025-06-07T09:44:00+02:00"
 draft: false
 toc: false
 ---
+# Liquidations
 
 Loan liquidation is the process of closing a loan by repaying it with USH. A loan may be liquidated when a borrower's health factor drops below the minimum threshold. With Hyperstable, anyone is able to (partially) repay loans that fall below the minimum health factor. 
 

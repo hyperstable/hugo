@@ -7,6 +7,7 @@ date: "2025-06-06T14:40:37+02:00"
 lastmod: "2025-06-06T14:40:37+02:00"
 draft: false
 ---
+# Hyperstable USD (USH)
 
 - USH is a stablecoin, which is a type of cryptocurrency that is designed to be less volatile than other cryptocurrencies because they are pegged to assets that are relatively stable. USH is designed to hold a stable value relative to one US dollar.
 - USH is crypto-backed, because it uses cryptocurrencies as collateral. Users can deposit one of the accepted collateral types to create (mint) USH. 

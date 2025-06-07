@@ -1,12 +1,13 @@
 ---
 weight: 130
 title: "Farm"
-description: ""
 icon: "article"
 date: "2025-06-06T14:48:26+02:00"
 lastmod: "2025-06-06T14:48:26+02:00"
 draft: false
+toc: false
 ---
+# Farm PEG
 
 Liquidity providers (LP's) earn `PEG` tokens by providing liquidity in selected pools. `PEG` emissions are distributed to LP's.
 

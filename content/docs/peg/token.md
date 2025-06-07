@@ -1,13 +1,13 @@
 ---
 weight: 310
 title: "Token"
-description: ""
 icon: "article"
 date: "2025-06-07T10:33:49+02:00"
 lastmod: "2025-06-07T10:33:49+02:00"
 draft: false
 toc: false
 ---
+# Hyperstable tokens
 
 Hyperstable uses two tokens to manage its utility and governance:
 

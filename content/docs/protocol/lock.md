@@ -1,20 +1,19 @@
 ---
 weight: 140
 title: "Lock"
-description: ""
 icon: "article"
 date: "2025-06-06T14:49:59+02:00"
 lastmod: "2025-06-06T14:49:59+02:00"
 draft: false
 toc: false
 ---
+# Lock PEG
 
 Hyperstable uses two tokens to manage its utility and governance:
 
 - `PEG` (ERC-20), is distributed to liquidity providers through emissions
 
 - `vePEG` (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. `vePEG` is protected from dilution via rebases.
-
 
 ## Vote Escrow
 
