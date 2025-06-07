@@ -11,7 +11,7 @@ toc: false
 
 Initial supply of 500mm tokens. Distribution at launch:
 
-| `PEG` (liquid) | \% |
+| **`PEG` (liquid)** | \% |
 |:---------------|:----------|
 | **Minting Bonus (based on USH minted)** | 21.0 |
 | - claimable weekly ||
@@ -23,7 +23,7 @@ Initial supply of 500mm tokens. Distribution at launch:
 | - 2\% Fjord sale , 2\% pairing ||
 | **Echo** | 1.4 |
 |||
-| `vePEG` (locked) | \% |
+| **`vePEG` (locked)** | \% |
 | **Angles** | 3.8 |
 | **Series A reserve** | 9.0 |
 | **Hyperstable tresury** | 24.8 |
