@@ -6,3 +6,6 @@ theme = 'hugo-book'
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[markup.goldmark.extensions]
+KaTeX = true
