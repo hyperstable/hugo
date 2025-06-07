@@ -1,0 +1,4 @@
+baseURL = 'https://hyperstable.github.io/hugo/'
+languageCode = 'en-us'
+title = 'Hyperstable'
+theme = 'ananke'
