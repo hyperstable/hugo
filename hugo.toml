@@ -2,14 +2,39 @@ baseURL = 'http://docs.hyperstable.xyz/'
 languageCode = 'en-us'
 title = 'Hyperstable'
 
-# The LotusDocs theme recommends this setting for its features
+# This is required by the theme
 [markup.goldmark.renderer]
   unsafe = true
 
 [module]
+  # 1. Use the correct, simple path to the theme
   [[module.imports]]
-    # This line updates the theme to the latest version and fixes the bugs
-    path = "github.com/colinwilson/lotusdocs/v5"
+    path = "github.com/colinwilson/lotusdocs"
+
+  # 2. Add ALL the mounts the theme requires to find its files
+  [[module.imports.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.imports.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.imports.mounts]]
+    source = "static"
+    target = "static"
+
+  # 3. Mount the bootstrap dependency correctly
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+  [[module.imports.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.imports.mounts]]
+    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    target = "assets/js/bootstrap.bundle.min.js"
+
+# 4. Disable the broken OpenGraph feature that causes the 'font' error
+[params.ui]
+  opengraph = false
 
 [[menu.primary]]
   name  = "Hyperstable Docs"
