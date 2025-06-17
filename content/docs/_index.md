@@ -18,11 +18,11 @@ Hyperstable is a crypto-backed, over-collateralized and decentralized stablecoin
     background: none !important;
     border: none !important;
     width: 100%;
-    text-align: left;
     padding: 0.5rem 1rem !important;
-    padding-right: 2rem !important;
-    position: relative;
-    transition: background-color 0.2s;
+    /* Use flexbox for alignment */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 }
 
 .sidebar-dropdown button.btn:hover {
@@ -32,17 +32,16 @@ Hyperstable is a crypto-backed, over-collateralized and decentralized stablecoin
 /* Simple arrow */
 .sidebar-dropdown button.btn::after {
     content: "›";
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
-    transition: transform 0.2s;
+    /* No positioning needed with flex */
     font-size: 1.2em;
     opacity: 0.5;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+    padding-left: 10px;
 }
 
 .sidebar-dropdown.active button.btn::after {
-    transform: translateY(-50%) rotate(90deg);
+    transform: rotate(90deg);
 }
 
 /* Hide original chevron */
