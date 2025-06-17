@@ -12,27 +12,52 @@ Hyperstable is a crypto-backed, over-collateralized and decentralized stablecoin
 | **PEG holders** |  Lock their tokens into vePEG to earn 100% of protocol revenue generated via Interest and Liquidation fees, receive Incentives, Vote on Emissions and get protected from dilution via Rebases |
 
 <style>
-/* Dropdown styling */
+/* Minimal clean dropdown style */
 .sidebar-dropdown button.btn {
     cursor: pointer !important;
+    background: none !important;
+    border: none !important;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 1rem !important;
+    padding-right: 2rem !important;
     position: relative;
-    padding-right: 30px !important;
+    transition: background-color 0.2s;
 }
+
+.sidebar-dropdown button.btn:hover {
+    background-color: #f8f9fa !important;
+}
+
+/* Simple arrow */
 .sidebar-dropdown button.btn::after {
-    content: "▼";
+    content: "›";
     position: absolute;
-    right: 10px;
+    right: 1rem;
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.7em;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.2s;
+    font-size: 1.2em;
     opacity: 0.5;
-    transition: transform 0.3s;
 }
+
 .sidebar-dropdown.active button.btn::after {
-    transform: translateY(-50%) rotate(-180deg);
+    transform: translateY(-50%) rotate(90deg);
 }
+
+/* Hide original chevron */
+.sidebar-dropdown button.btn > :last-child {
+    display: none !important;
+}
+
+/* Submenu */
 .sidebar-submenu {
-    transition: all 0.3s ease;
+    background: none !important;
+}
+
+/* Active section highlight */
+.sidebar-dropdown.active > button.btn {
+    font-weight: 600;
 }
 </style>
 
