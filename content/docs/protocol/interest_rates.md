@@ -1,18 +1,16 @@
 ---
-weight: 190
 title: "Interest rates"
-date: "2025-06-07T09:43:50+02:00"
-lastmod: "2025-06-07T09:43:50+02:00"
-draft: false
-toc: false
-katex: true
+linkTitle: "Interest rates"
+weight: 190
+math: true  # This might be needed for Docsy
+katex: true # Also try this
 ---
 
 Interest charged to borrowers is obtained as the sum of the following components:
 
-1. Manual rate $r_m$
-1. Vault utilization rate $r_u$
-2. Peg rate $r_p$
+1. Manual rate ($r_m$)
+2. Vault utilization rate ($r_u$)
+3. Peg rate ($r_p$)
 
 ### Manual rate
 
