@@ -21,12 +21,19 @@ KaTeX = true
       block = true
 
 [module]
-    [[module.imports]]
-        path = "github.com/colinwilson/lotusdocs"
-        disable = false
-    [[module.imports]]
-        path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
-        disable = false
+  [[module.imports]]
+    path = "github.com/colinwilson/lotusdocs"
+    disable = false
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+    disable = false
+  # Add the mounts configuration below
+  [[module.imports.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.imports.mounts]]
+    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    target = "assets/js/bootstrap.bundle.min.js"
 
 [[menu.primary]]
     name  = "Hyperstable Docs"
