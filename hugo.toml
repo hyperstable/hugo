@@ -1,28 +1,16 @@
 baseURL = 'https://docs.hyperstable.xyz/'
 languageCode = 'en-us'
 title = 'Hyperstable'
+theme = 'lotusdocs'  # Simple theme reference
 
 # This is required by the theme
 [markup.goldmark.renderer]
   unsafe = true
 
-[module]
-  [[module.imports]]
-    path = "github.com/colinwilson/lotusdocs"
-    disable = false
-    
-  [[module.imports]]
-    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
-    disable = false
-
 # Theme parameters
 [params]
-  # FlexSearch configuration - must be an object, not a boolean
   [params.flexSearch]
-    enabled = true
-    tokenize = "full"
-    optimize = true
-    cache = 100
+    enabled = false
 
 [params.ui]
   opengraph = false
