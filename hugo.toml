@@ -2,49 +2,17 @@ baseURL = 'http://docs.hyperstable.xyz/'
 languageCode = 'en-us'
 title = 'Hyperstable'
 
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
-
-[markup.goldmark.extensions]
-KaTeX = true
-
-[markup]
-    [markup.tableOfContents]
-      endLevel = 3
-      startLevel = 1
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-  [markup.goldmark.parser]
-    [markup.goldmark.parser.attribute]
-      block = true
+# The LotusDocs theme recommends this setting for its features
+[markup.goldmark.renderer]
+  unsafe = true
 
 [module]
   [[module.imports]]
-    path = "github.com/colinwilson/lotusdocs"
-  [[module.imports.mounts]]
-    source = "layouts"
-    target = "layouts"
-  [[module.imports.mounts]]
-    # This is the new line that fixes the issue
-    source = "assets/js/lotusdocs.js"
-    target = "assets/js/lotusdocs.js"
-
-  [[module.imports]]
-    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
-  [[module.imports.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.imports.mounts]]
-    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-    target = "assets/js/bootstrap.bundle.min.js"
+    # This line updates the theme to the latest version and fixes the bugs
+    path = "github.com/colinwilson/lotusdocs/v5"
 
 [[menu.primary]]
-    name  = "Hyperstable Docs"
-    url = "/docs/"
-    identifier = "docs"
-    weight = 10
-
-[params.ui]
-  opengraph = false
+  name  = "Hyperstable Docs"
+  url = "/docs/"
+  identifier = "docs"
+  weight = 10
