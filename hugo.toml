@@ -7,45 +7,22 @@ title = 'Hyperstable'
   unsafe = true
 
 [module]
-  # Use Hugo modules for the theme
   [[module.imports]]
     path = "github.com/colinwilson/lotusdocs"
     disable = false
     
-  # Mount theme components
-  [[module.imports.mounts]]
-    source = "layouts"
-    target = "layouts"
-  [[module.imports.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.imports.mounts]]
-    source = "static"
-    target = "static"
-  [[module.imports.mounts]]
-    source = "data"
-    target = "data"
-  [[module.imports.mounts]]
-    source = "i18n"
-    target = "i18n"
-
-  # Bootstrap dependency
   [[module.imports]]
     path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
     disable = false
-    
-  [[module.imports.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.imports.mounts]]
-    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-    target = "assets/js/bootstrap.bundle.min.js"
 
 # Theme parameters
 [params]
-  # Add any theme-specific parameters here
-  # Enable debug mode to check asset loading
-  debug = true
+  # FlexSearch configuration - must be an object, not a boolean
+  [params.flexSearch]
+    enabled = true
+    tokenize = "full"
+    optimize = true
+    cache = 100
 
 [params.ui]
   opengraph = false
@@ -56,7 +33,3 @@ title = 'Hyperstable'
   url = "/docs/"
   identifier = "docs"
   weight = 10
-
-# Required for proper asset handling
-[build]
-  writeStats = true
