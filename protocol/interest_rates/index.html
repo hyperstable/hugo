@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/hugo/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=hugo/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interest charged to borrowers is obtained as the sum of the following components:
+
+Manual rate ($r_m$)
+Vault utilization rate ($r_u$)
+Peg rate ($r_p$)
+
+
+  Manual rate
+  #
+
+The manual interest rate is static and set by the protocol as a constant value and represents the minimum interest rate that the protocol charges.
+
+  Vault utilization rate
+  #
+
+Hyperstable uses Morpho&rsquo;s AdaptiveCurve interest rate model at the vault level, which is engineered to maintain the ratio of the borrowed asset (USH) over the supplied asset (collateral), close to a preselected target. When the (vault specific) collateral ratio is above the set target, the interest rate automatically trends towards zero.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/hugo/protocol/interest_rates/">
+  <meta property="og:site_name" content="Hyperstable">
+  <meta property="og:title" content="Interest rates">
+  <meta property="og:description" content="Interest charged to borrowers is obtained as the sum of the following components:
+Manual rate ($r_m$) Vault utilization rate ($r_u$) Peg rate ($r_p$) Manual rate # The manual interest rate is static and set by the protocol as a constant value and represents the minimum interest rate that the protocol charges.
+Vault utilization rate # Hyperstable uses Morpho’s AdaptiveCurve interest rate model at the vault level, which is engineered to maintain the ratio of the borrowed asset (USH) over the supplied asset (collateral), close to a preselected target. When the (vault specific) collateral ratio is above the set target, the interest rate automatically trends towards zero.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="protocol">
+    <meta property="article:published_time" content="2025-06-07T09:43:50+02:00">
+    <meta property="article:modified_time" content="2025-06-07T09:43:50+02:00">
+<title>Interest rates | Hyperstable</title>
+<link rel="icon" href="/hugo/favicon.png" >
+<link rel="manifest" href="/hugo/manifest.json">
+<link rel="canonical" href="http://localhost:1313/hugo/protocol/interest_rates/">
+<link rel="stylesheet" href="/hugo/book.min.d5e59cb0aa8d22a5813c62cd5e25d3d172489a369c61dc3f622ee96ae1ebb457.css" integrity="sha256-1eWcsKqNIqWBPGLNXiXT0XJImjacYdw/Yi7pauHrtFc=" crossorigin="anonymous">
+  <script defer src="/hugo/fuse.min.js"></script>
+  <script defer src="/hugo/en.search.min.6ea759be4beb1456a6c1070cab8c6496c41a3274c1f1e00ed99e1deecbcae019.js" integrity="sha256-bqdZvkvrFFamwQcMq4xklsQaMnTB8eAO2Z4d7svK4Bk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/hugo/"><span>Hyperstable</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/hugo/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Interest rates</h3>
+
+  <label for="toc-control">
+    
+    <img src="/hugo/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#manual-rate">Manual rate</a></li>
+        <li><a href="#vault-utilization-rate">Vault utilization rate</a></li>
+        <li><a href="#peg-rate">Peg rate</a></li>
+        <li><a href="#total-interest-rate">Total interest rate</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p>Interest charged to borrowers is obtained as the sum of the following components:</p>
+<ol>
+<li>Manual rate ($r_m$)</li>
+<li>Vault utilization rate ($r_u$)</li>
+<li>Peg rate ($r_p$)</li>
+</ol>
+<h3 id="manual-rate">
+  Manual rate
+  <a class="anchor" href="#manual-rate">#</a>
+</h3>
+<p>The manual interest rate is static and set by the protocol as a constant value and represents the minimum interest rate that the protocol charges.</p>
+<h3 id="vault-utilization-rate">
+  Vault utilization rate
+  <a class="anchor" href="#vault-utilization-rate">#</a>
+</h3>
+<p>Hyperstable uses Morpho&rsquo;s AdaptiveCurve interest rate model at the vault level, which is engineered to maintain the ratio of the borrowed asset (USH) over the supplied asset (collateral), close to a preselected target. When the (vault specific) collateral ratio is above the set target, the interest rate automatically trends towards zero.</p>
+<h3 id="peg-rate">
+  Peg rate
+  <a class="anchor" href="#peg-rate">#</a>
+</h3>
+<p>The purpose of the peg based interest rate is to manage supply and demand for USH and keep the stablecoin trading at one dollar. If USH is trading above one dollar, the interest rate is lowered. If USH is trading below one dollar, the interest rate is raised. Just like the vault collateralization rate, under normal circumstances (when USH trading at or above one dollar, aka at &lsquo;&lsquo;peg&rsquo;&rsquo;), the peg rate trends towards zero.</p>
+<h3 id="total-interest-rate">
+  Total interest rate
+  <a class="anchor" href="#total-interest-rate">#</a>
+</h3>
+<p>The total interest rate ($r$) charged to borrowers is the sum of the above.</p>
+<p>$$
+r = r_m + r_u + r_p
+$$</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#manual-rate">Manual rate</a></li>
+        <li><a href="#vault-utilization-rate">Vault utilization rate</a></li>
+        <li><a href="#peg-rate">Peg rate</a></li>
+        <li><a href="#total-interest-rate">Total interest rate</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

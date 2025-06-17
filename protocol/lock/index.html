@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/hugo/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=hugo/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hyperstable uses two tokens to manage its utility and governance:
+
+
+PEG (ERC-20), is distributed to liquidity providers through emissions
+
+
+vePEG (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. vePEG is protected from dilution via rebases.
+
+
+
+  Vote Escrow
+  #
+
+The &ldquo;ve&rdquo; in  vePEG stands for : vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any PEG holder can vote escrow their tokens and receive vePEG in exchange. With Hyperstable, we call this locking.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/hugo/protocol/lock/">
+  <meta property="og:site_name" content="Hyperstable">
+  <meta property="og:title" content="Lock">
+  <meta property="og:description" content="Hyperstable uses two tokens to manage its utility and governance:
+PEG (ERC-20), is distributed to liquidity providers through emissions
+vePEG (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. vePEG is protected from dilution via rebases.
+Vote Escrow # The “ve” in vePEG stands for : vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any PEG holder can vote escrow their tokens and receive vePEG in exchange. With Hyperstable, we call this locking.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="protocol">
+    <meta property="article:published_time" content="2025-06-06T14:49:59+02:00">
+    <meta property="article:modified_time" content="2025-06-06T14:49:59+02:00">
+<title>Lock | Hyperstable</title>
+<link rel="icon" href="/hugo/favicon.png" >
+<link rel="manifest" href="/hugo/manifest.json">
+<link rel="canonical" href="http://localhost:1313/hugo/protocol/lock/">
+<link rel="stylesheet" href="/hugo/book.min.d5e59cb0aa8d22a5813c62cd5e25d3d172489a369c61dc3f622ee96ae1ebb457.css" integrity="sha256-1eWcsKqNIqWBPGLNXiXT0XJImjacYdw/Yi7pauHrtFc=" crossorigin="anonymous">
+  <script defer src="/hugo/fuse.min.js"></script>
+  <script defer src="/hugo/en.search.min.6ea759be4beb1456a6c1070cab8c6496c41a3274c1f1e00ed99e1deecbcae019.js" integrity="sha256-bqdZvkvrFFamwQcMq4xklsQaMnTB8eAO2Z4d7svK4Bk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/hugo/"><span>Hyperstable</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/hugo/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Lock</h3>
+
+  <label for="toc-control">
+    
+    <img src="/hugo/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#vote-escrow">Vote Escrow</a></li>
+    <li><a href="#locking">Locking</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p>Hyperstable uses two tokens to manage its utility and governance:</p>
+<ul>
+<li>
+<p><code>PEG</code> (ERC-20), is distributed to liquidity providers through emissions</p>
+</li>
+<li>
+<p><code>vePEG</code> (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. <code>vePEG</code> is protected from dilution via rebases.</p>
+</li>
+</ul>
+<h2 id="vote-escrow">
+  Vote Escrow
+  <a class="anchor" href="#vote-escrow">#</a>
+</h2>
+<p>The &ldquo;ve&rdquo; in <code> vePEG</code> stands for : vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any <code>PEG</code> holder can vote escrow their tokens and receive <code>vePEG</code> in exchange. With Hyperstable, we call this locking.</p>
+<h2 id="locking">
+  Locking
+  <a class="anchor" href="#locking">#</a>
+</h2>
+<p>The maximum lock period is 1 year, following the linear relationship shown below:</p>
+<ul>
+<li>100 <code>PEG</code> locked for 1 year will become 100 <code>vePEG</code></li>
+<li>100 <code>PEG</code> locked for 3 months will become 25 <code>vePEG</code></li>
+</ul>
+<p>The longer the locking time, the higher the voting power of the underlying locked balance. Additional <code>PEG</code> tokens can be added to a Lock at any time.</p>
+<p>Additionally, Hyperstable locks can be set into auto-max lock, which are treated by the protocol as being locked for the maximum duration of 1 year, and their voting power does not decay. The auto-max lock feature can be turned on and off for each lock.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#vote-escrow">Vote Escrow</a></li>
+    <li><a href="#locking">Locking</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

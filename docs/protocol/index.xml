@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Protocol on Hyperstable</title>
+    <link>https://docs.hyperstable.xyz/docs/protocol/</link>
+    <description>Recent content in Protocol on Hyperstable</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Jun 2025 09:44:18 +0200</lastBuildDate>
+    <atom:link href="https://docs.hyperstable.xyz/docs/protocol/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>USH</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/ush/</link>
+      <pubDate>Fri, 06 Jun 2025 14:40:37 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/ush/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;USH is a stablecoin, which is a type of cryptocurrency that is designed to be less volatile than other cryptocurrencies because they are pegged to assets that are relatively stable. USH is designed to hold a stable value relative to one US dollar.&lt;/li&gt;&#xA;&lt;li&gt;USH is crypto-backed, because it uses cryptocurrencies as collateral. Users can deposit one of the accepted collateral types to create (mint) USH.&lt;/li&gt;&#xA;&lt;li&gt;USH is over-collateralized, which means that the backing collateral always needs to have a higher value than the amount of USH in circulation. The purpose of the over-collateralization is to account for volatility.&lt;/li&gt;&#xA;&lt;li&gt;USH is decentralised. Collateral types do not have a single point of control, collateral vaults are non-custodial, anyone can mint USH, anyone can trigger a liquidation and interest rates are adjusted onchain by the system.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Mint</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/mint/</link>
+      <pubDate>Fri, 06 Jun 2025 14:47:06 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/mint/</guid>
+      <description>&lt;p&gt;To mint the USH stablecoin, users deposit one of the supported collateral types into the designated vault. Each vault has its own minimum health factor requirement and interest rate.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Farm</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/farm/</link>
+      <pubDate>Fri, 06 Jun 2025 14:48:26 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/farm/</guid>
+      <description>&lt;p&gt;Liquidity providers (LP&amp;rsquo;s) earn &lt;code&gt;PEG&lt;/code&gt; tokens by providing liquidity in selected pools. &lt;code&gt;PEG&lt;/code&gt; emissions are distributed to LP&amp;rsquo;s.&lt;/p&gt;&#xA;&lt;p&gt;A liquidity pool is a collection of digital assets or tokens that are locked in a smart contract to enable trading. LP&amp;rsquo;s deposit assets into the pool and in return, they receive tokens that represent their ownership of the liquidity.&lt;/p&gt;&#xA;&lt;p&gt;The tokens that LP&amp;rsquo;s receive after providing liquidity are then to be deposited in a so called Gauge. &lt;code&gt;PEG&lt;/code&gt; emissions are distributed to gauges based on &lt;code&gt;vePEG&lt;/code&gt; voting and LP token depositors earn their share of  &lt;code&gt;PEG&lt;/code&gt; emmisions that flow to the gauge.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lock</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/lock/</link>
+      <pubDate>Fri, 06 Jun 2025 14:49:59 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/lock/</guid>
+      <description>&lt;p&gt;Hyperstable uses two tokens to manage its utility and governance:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;PEG&lt;/code&gt; (ERC-20), is distributed to liquidity providers through emissions&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;vePEG&lt;/code&gt; (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. &lt;code&gt;vePEG&lt;/code&gt; is protected from dilution via rebases.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;vote-escrow&#34;&gt;Vote Escrow&lt;/h2&gt;&#xA;&lt;p&gt;The &amp;ldquo;ve&amp;rdquo; in &lt;code&gt;vePEG&lt;/code&gt; stands for : vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any &lt;code&gt;PEG&lt;/code&gt; holder can vote escrow their tokens and receive &lt;code&gt;vePEG&lt;/code&gt; in exchange. With Hyperstable, we call this locking.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vote</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/vote/</link>
+      <pubDate>Sat, 07 Jun 2025 09:43:01 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/vote/</guid>
+      <description>&lt;p&gt;The amount of rewards per pool is decided via gauge voting. Pools receive an amount of rewards proportional to their share of the total votes. To vote, users have to Lock their &lt;code&gt;PEG&lt;/code&gt; tokens first.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bonus</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/bonus/</link>
+      <pubDate>Sat, 07 Jun 2025 09:43:14 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/bonus/</guid>
+      <description>&lt;p&gt;Hyperstable rewards their users for actions and assigns &lt;code&gt;PEG&lt;/code&gt; rewards via bonus. The following actions are rewarded a bonus.&lt;/p&gt;&#xA;&lt;h2 id=&#34;minting&#34;&gt;Minting&lt;/h2&gt;&#xA;&lt;p&gt;The USH minting bonus is a borrow incentive paid out in &lt;code&gt;PEG&lt;/code&gt; tokens. This incentive promotes growth of the protocol by allowing borrowers to potentially offset their interest payments. 21% of the initial &lt;code&gt;PEG&lt;/code&gt; supply will be distributed to USH minters on a weekly basis determined by a preset &lt;code&gt;PEG&lt;/code&gt; reward-rate (tbd) per USH minted.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gauge</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/gauge/</link>
+      <pubDate>Sat, 07 Jun 2025 09:43:21 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/gauge/</guid>
+      <description>&lt;p&gt;A gauge is a smart contract that takes in LP tokens and rewards the depositors with &lt;code&gt;PEG&lt;/code&gt; tokens and other additional Incentives.&lt;/p&gt;&#xA;&lt;p&gt;Gauges are a governance mechanism that allow &lt;code&gt;vePEG&lt;/code&gt; holders to allocate &lt;code&gt;PEG&lt;/code&gt; Emissions via voting. Gauges make it possible for the community to self-direct the growth of the Hyperstable ecosystem by giving each &lt;code&gt;vePEG&lt;/code&gt; token holder the power to direct liquidity provision to certain pools.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Incentivize</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/incentivize/</link>
+      <pubDate>Sat, 07 Jun 2025 09:43:39 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/incentivize/</guid>
+      <description>&lt;p&gt;By incentivizing &lt;code&gt;vePEG&lt;/code&gt; voters to vote for gauges, users or protocols who provide these incentives, can try to draw more liquidity to specific pools. More votes to a gauge means more &lt;code&gt;PEG&lt;/code&gt; emmissions will flow to that gauge, which in turn means higher rewards for liquidity providers in the pool.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Interest rates</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/interest_rates/</link>
+      <pubDate>Sat, 07 Jun 2025 09:43:50 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/interest_rates/</guid>
+      <description>&lt;p&gt;Interest charged to borrowers is obtained as the sum of the following components:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Manual rate ($r_m$)&lt;/li&gt;&#xA;&lt;li&gt;Vault utilization rate ($r_u$)&lt;/li&gt;&#xA;&lt;li&gt;Peg rate ($r_p$)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;manual-rate&#34;&gt;Manual rate&lt;/h3&gt;&#xA;&lt;p&gt;The manual interest rate is static and set by the protocol as a constant value and represents the minimum interest rate that the protocol charges.&lt;/p&gt;&#xA;&lt;h3 id=&#34;vault-utilization-rate&#34;&gt;Vault utilization rate&lt;/h3&gt;&#xA;&lt;p&gt;Hyperstable uses Morpho&amp;rsquo;s AdaptiveCurve interest rate model at the vault level, which is engineered to maintain the ratio of the borrowed asset (USH) over the supplied asset (collateral), close to a preselected target. When the (vault specific) collateral ratio is above the set target, the interest rate automatically trends towards zero.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Liquidations</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/liquidations/</link>
+      <pubDate>Sat, 07 Jun 2025 09:44:00 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/liquidations/</guid>
+      <description>&lt;p&gt;Loan liquidation is the process of closing a loan by repaying it with USH. A loan may be liquidated when a borrower&amp;rsquo;s health factor drops below the minimum threshold. With Hyperstable, anyone is able to (partially) repay loans that fall below the minimum health factor.&lt;/p&gt;&#xA;&lt;p&gt;In practice, this means bots will be actively monitoring all loans, looking for opportunities to liquidate.&lt;/p&gt;&#xA;&lt;p&gt;The liquidator receives a preset liquidation reward as a percentage of the repaid USH debt and the borrower pays a liquidation fee to the protocol as a percentage of the remaining overcollateralization at the time of the liquidation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Health factor</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/health_factor/</link>
+      <pubDate>Sat, 07 Jun 2025 09:44:09 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/health_factor/</guid>
+      <description>&lt;p&gt;A health factor measures the value of collateral in relation to the amount of a loan. A higher health factor indicates a lower risk for the borrower. A loan with more collateral than the value of the loan is considered over-collateralized, which reduces the risk of liquidation.&lt;/p&gt;&#xA;&lt;p&gt;The health factor is calculated by dividing the value of the collateral by the amount of the loan. For example: a loan with a collateral value of &lt;code&gt;$150&lt;/code&gt; coupled with a debt of &lt;code&gt;$100&lt;/code&gt;, produces a health factor of 1.5.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Collateral types</title>
+      <link>https://docs.hyperstable.xyz/docs/protocol/collateral_types/</link>
+      <pubDate>Sat, 07 Jun 2025 09:44:18 +0200</pubDate>
+      <guid>https://docs.hyperstable.xyz/docs/protocol/collateral_types/</guid>
+      <description>&lt;p&gt;Hyperstable supports the following assets as collateral:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;Contract address&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;HYPE&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;0x84f108D074f0F9513421d05632D4291cEa8cdd0b&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;wstHYPE&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;0xC55fAB3DDcab42B6DD2358FBDc59950F832f67Fc&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;uBTC&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;0x6714cD43536E7E242923aCE3d301a3311DBca6BB&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;uETH&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;0xE7CEAcCAa613d8fde4e214d7F71c85933cD1F531&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+    </item>
+  </channel>
+</rss>

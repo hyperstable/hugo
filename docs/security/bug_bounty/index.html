@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <title>Bug bounty | Hyperstable</title>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
+    <meta name="author" content="Colin Wilson - Lotus Labs" />
+    <meta name="email" content="support@aigis.uk" />
+    <meta name="website" content="https://lotusdocs.dev" />
+    <meta name="Version" content="v0.1.0" />
+    
+    <link rel="icon" href="http://localhost:1313/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="http://localhost:1313/site.webmanifest">
+<meta property="og:title" content="Bug bounty" />
+<meta property="og:description" content="Bug bounty linkcoming soon" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/docs/security/bug_bounty/" /><meta property="og:image" content="http://localhost:1313/opengraph/card-base-2_hu_15e1738c88b6c17f.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2025-06-07T11:10:06+02:00" />
+<meta property="article:modified_time" content="2025-06-07T11:10:06+02:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/opengraph/card-base-2_hu_15e1738c88b6c17f.png"/>
+<meta name="twitter:title" content="Bug bounty"/>
+<meta name="twitter:description" content="Bug bounty linkcoming soon"/>
+
+    
+        <link rel="alternate" type="application/atom+xml" title="Atom feed for Hyperstable" href="/index.xml" />
+    
+    
+    
+            
+                <script type="text/javascript" src="http://localhost:1313/docs/js/flexsearch.bundle.js"></script>
+            
+        
+    
+    
+
+    <link rel="stylesheet" href="/docs/scss/style.css" crossorigin="anonymous">
+    
+    
+    </head>
+<body>
+        <div class="content">
+            <div class="page-wrapper toggled">
+<nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-brand">
+        <a href='/' aria-label="HomePage" alt="HomePage">
+            
+                <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+            
+        </a>
+    </div>
+    <div class="sidebar-content" style="height: calc(100% - 131px);">
+        <ul class="sidebar-menu">
+            
+                
+                
+                    
+                    
+                        <li class="sidebar-dropdown no-icon ">
+                            <button class="btn">
+                                Protocol
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/ush/">USH</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/mint/">Mint</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/farm/">Farm</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/lock/">Lock</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/vote/">Vote</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/bonus/">Bonus</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/gauge/">Gauge</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/incentivize/">Incentivize</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/interest_rates/">Interest rates</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/liquidations/">Liquidations</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/health_factor/">Health factor</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/protocol/collateral_types/">Collateral types</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown no-icon ">
+                            <button class="btn">
+                                PEG
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/peg/token/">Token</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/peg/distribution/">Distribution</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/peg/emission/">Emission</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/peg/rebase/">Rebase</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown no-icon current active">
+                            <button class="btn">
+                                Security
+                            </button>
+                            <div class="sidebar-submenu d-block">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/security/audits/">Audits</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class="current no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/security/bug_bounty/">Bug bounty</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown no-icon ">
+                            <button class="btn">
+                                Contracts
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/contracts/hyperevm/">HyperEVM</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+            
+        </ul>
+        
+    </div>
+    
+        <ul class="sidebar-footer list-unstyled mb-0">
+            
+        </ul>
+    
+</nav>
+
+                    <main class="page-content bg-transparent">
+                        
+<div id="top-header" class="top-header d-print-none">
+    <div class="header-bar d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+            <a href='/' class="logo-icon me-3" aria-label="HomePage" alt="HomePage">
+                <div class="small">
+                    
+                            <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+                    
+                </div>
+                <div class="big">
+                    
+                            <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+                    
+                </div>
+            </a>
+            <button id="close-sidebar" class="btn btn-icon btn-soft">
+                <span class="material-icons size-20 menu-icon align-middle">menu</span>
+            </button>
+            
+            
+                    
+                    <button id="flexsearch-button" class="ms-3 btn btn-soft" data-bs-toggle="collapse" data-bs-target="#FlexSearchCollapse" aria-expanded="false" aria-controls="FlexSearchCollapse">
+                        <span class="material-icons size-20 menu-icon align-middle">search</span>
+                        <span class="flexsearch-button-placeholder ms-1 me-2 d-none d-sm-block"></span>
+                        <div class="d-none d-sm-block">
+                            <span class="flexsearch-button-keys">
+                                <kbd class="flexsearch-button-cmd-key">
+                                    <svg width="44" height="15"><path d="M2.118,11.5A1.519,1.519,0,0,1,1,11.042,1.583,1.583,0,0,1,1,8.815a1.519,1.519,0,0,1,1.113-.458h.715V6.643H2.118A1.519,1.519,0,0,1,1,6.185,1.519,1.519,0,0,1,.547,5.071,1.519,1.519,0,0,1,1,3.958,1.519,1.519,0,0,1,2.118,3.5a1.519,1.519,0,0,1,1.114.458A1.519,1.519,0,0,1,3.69,5.071v.715H5.4V5.071A1.564,1.564,0,0,1,6.976,3.5,1.564,1.564,0,0,1,8.547,5.071,1.564,1.564,0,0,1,6.976,6.643H6.261V8.357h.715a1.575,1.575,0,0,1,1.113,2.685,1.583,1.583,0,0,1-2.227,0A1.519,1.519,0,0,1,5.4,9.929V9.214H3.69v.715a1.519,1.519,0,0,1-.458,1.113A1.519,1.519,0,0,1,2.118,11.5Zm0-.857a.714.714,0,0,0,.715-.714V9.214H2.118a.715.715,0,1,0,0,1.429Zm4.858,0a.715.715,0,1,0,0-1.429H6.261v.715a.714.714,0,0,0,.715.714ZM3.69,8.357H5.4V6.643H3.69ZM2.118,5.786h.715V5.071a.714.714,0,0,0-.715-.714.715.715,0,0,0-.5,1.22A.686.686,0,0,0,2.118,5.786Zm4.143,0h.715a.715.715,0,0,0,.5-1.22.715.715,0,0,0-1.22.5Z" fill="currentColor"></path><path d="M12.4,11.475H11.344l3.879-7.95h1.056Z" fill="currentColor"></path><path d="M25.073,5.384l-.864.576a2.121,2.121,0,0,0-1.786-.923,2.207,2.207,0,0,0-2.266,2.326,2.206,2.206,0,0,0,2.266,2.325,2.1,2.1,0,0,0,1.782-.918l.84.617a3.108,3.108,0,0,1-2.622,1.293,3.217,3.217,0,0,1-3.349-3.317,3.217,3.217,0,0,1,3.349-3.317A3.046,3.046,0,0,1,25.073,5.384Z" fill="currentColor"></path><path d="M30.993,5.142h-2.07v5.419H27.891V5.142h-2.07V4.164h5.172Z" fill="currentColor"></path><path d="M34.67,4.164c1.471,0,2.266.658,2.266,1.851,0,1.087-.832,1.809-2.134,1.855l2.107,2.691h-1.28L33.591,7.87H33.07v2.691H32.038v-6.4Zm-1.6.969v1.8h1.572c.832,0,1.22-.3,1.22-.918s-.411-.882-1.22-.882Z" fill="currentColor"></path><path d="M42.883,10.561H38.31v-6.4h1.033V9.583h3.54Z" fill="currentColor"></path></svg>
+                                </kbd>
+                                <kbd class="flexsearch-button-key">
+                                    <svg width="15" height="15"><path d="M5.926,12.279H4.41L9.073,2.721H10.59Z" fill="currentColor"/></svg>
+                                </kbd>
+                            </span>
+                        </div>
+                    </button>
+                
+            </div>
+
+        <div class="d-flex align-items-center">
+            <ul class="list-unstyled mb-0">
+                
+            </ul>
+            
+        </div>
+    </div>
+    
+    
+            <div class="collapse" id="FlexSearchCollapse">
+                <div class="flexsearch-container">
+                    <div class="flexsearch-keymap">
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to navigate</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to select</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to close</span>
+                        </li>
+                    </div>
+                    <form class="flexsearch position-relative flex-grow-1 ms-2 me-2">
+                        <div class="d-flex flex-row">
+                            <input id="flexsearch" class="form-control" type="search" placeholder="" aria-label="" autocomplete="off">
+                            <button id="hideFlexsearch" type="button" class="ms-2 btn btn-soft">
+                                cancel
+                            </button>
+                        </div>
+                        <div id="suggestions" class="shadow rounded-1 d-none"></div>
+                    </form>
+                </div>
+            </div>
+        
+    
+    
+</div>
+
+
+                            <div class="container-fluid">
+                                <div class="layout-spacing">
+                                    
+                                        <div class="d-md-flex justify-content-between align-items-center"><nav aria-label="breadcrumb" class="d-inline-block pb-2 mt-1 mt-sm-0">
+    <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        
+            
+                <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/">
+                        <i class="material-icons size-20 align-text-bottom" itemprop="name">Home</i>
+                    </a>
+                    <meta itemprop="position" content='1' />
+                </li>
+            
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/security/">
+                        <span itemprop="name">Security</span>
+                    </a>
+                    <meta itemprop="position" content='2' />
+                </li>
+            
+        
+            <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">Bug bounty</span>
+                <meta itemprop="position" content='3' />
+            </li>
+        
+    </ul>
+</nav></div>
+                                    
+                                    <div class="row flex-xl-nowrap">
+                                        
+                                        <div class="docs-toc col-xl-3  visually-hidden  d-xl-block"><toc>
+    <div class="fw-bold text-uppercase mb-2">On this page</div>
+    <nav id="TableOfContents"></nav>
+    </toc></div>
+                                        
+                                        
+                                        <div class="docs-toc-mobile  visually-hidden  d-print-none d-xl-none">
+                                            <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
+                                                Table of Contents
+                                            </button>
+<nav id="toc-mobile"></nav></div>
+                                        <div class="docs-content col-12  mt-0">
+                                            <div class="mb-0 d-flex">
+                                                
+                                                <h1 class="content-title mb-0">
+                                                    Bug bounty
+                                                    
+                                                </h1>
+                                            </div>
+                                            
+                                            <div id="content" class="main-content" >
+                                                
+    
+    <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
+        <h1 id="bug-bounty">Bug bounty <a href="#bug-bounty" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><p>coming soon</p>
+
+    </div>
+
+    
+
+    
+                                            </div>
+                                            <div><hr class="doc-hr">
+<div id="doc-nav" class="d-print-none">
+
+	<div class="row flex-xl-nowrap ">
+	<div class="col-sm-6 pt-2 doc-next">
+		<a href="/docs/security/audits/">
+			<div class="card h-100 my-1">
+				<div class="card-body py-2">
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Audits</p>
+					
+				</div>
+			</div>
+		</a>
+        </div>
+	<div class="col-sm-6 pt-2 doc-prev">
+		<a class="ms-auto" href="/docs/contracts/hyperevm/">
+			<div class="card h-100 my-1 text-end">
+				<div class="card-body py-2">
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">HyperEVM <i class="material-icons align-middle">navigate_next</i></p>
+					
+				</div>
+			</div>
+		</a>
+        </div>
+	</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<footer class="shadow py-3 d-print-none">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="text-sm-start text-center mx-md-2">
+                    <p class="mb-0">
+                        
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</main>
+            </div>
+        </div>
+
+        
+        
+        <button onclick="topFunction()" id="back-to-top" aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12,10.224l-6.3,6.3L4.32,15.152,12,7.472l7.68,7.68L18.3,16.528Z" style="fill:#fff"/></svg></button>
+        
+        
+
+        
+        
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    <script src="/docs/js/bootstrap.js" defer></script>
+
+
+    <script type="text/javascript" src="http://localhost:1313/docs/js/bundle.js" defer></script>
+
+        
+
+        
+        <script type="module">
+    var suggestions = document.getElementById('suggestions');
+    var search = document.getElementById('flexsearch');
+
+    const flexsearchContainer = document.getElementById('FlexSearchCollapse');
+
+    const hideFlexsearchBtn = document.getElementById('hideFlexsearch');
+
+    const configObject = { toggle: false }
+    const flexsearchContainerCollapse = new Collapse(flexsearchContainer, configObject) 
+
+    if (search !== null) {
+        document.addEventListener('keydown', inputFocus);
+        flexsearchContainer.addEventListener('shown.bs.collapse', function () {
+            search.focus();
+        });
+        
+        var topHeader = document.getElementById("top-header");
+        document.addEventListener('click', function(elem) {
+            if (!flexsearchContainer.contains(elem.target) && !topHeader.contains(elem.target))
+                flexsearchContainerCollapse.hide();
+        });
+    }
+
+    hideFlexsearchBtn.addEventListener('click', () =>{
+        flexsearchContainerCollapse.hide()
+    })
+
+    function inputFocus(e) {
+        if (e.ctrlKey && e.key === '/') {
+            e.preventDefault();
+            flexsearchContainerCollapse.toggle();
+        }
+        if (e.key === 'Escape' ) {
+            search.blur();
+            
+            flexsearchContainerCollapse.hide();
+        }
+    };
+
+    document.addEventListener('click', function(event) {
+
+    var isClickInsideElement = suggestions.contains(event.target);
+
+    if (!isClickInsideElement) {
+        suggestions.classList.add('d-none');
+    }
+
+    });
+
+    
+
+
+    document.addEventListener('keydown',suggestionFocus);
+
+    function suggestionFocus(e) {
+    const suggestionsHidden = suggestions.classList.contains('d-none');
+    if (suggestionsHidden) return;
+
+    const focusableSuggestions= [...suggestions.querySelectorAll('a')];
+    if (focusableSuggestions.length === 0) return;
+
+    const index = focusableSuggestions.indexOf(document.activeElement);
+
+    if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const nextIndex = index > 0 ? index - 1 : 0;
+        focusableSuggestions[nextIndex].focus();
+    }
+    else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const nextIndex= index + 1 < focusableSuggestions.length ? index + 1 : index;
+        focusableSuggestions[nextIndex].focus();
+    }
+
+    }
+
+    
+
+
+    (function(){
+
+    var index = new FlexSearch.Document({
+        
+        tokenize: "forward",
+        minlength:  0 ,
+        cache:  100 ,
+        optimize:  true ,
+        document: {
+        id: 'id',
+        store: [
+            "href", "title", "description"
+        ],
+        index: ["title", "description", "content"]
+        }
+    });
+
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+    
+
+    index.add(
+            {
+                id:  0 ,
+                href: "\/docs\/protocol\/",
+                title: "Protocol",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  1 ,
+                href: "\/docs\/protocol\/ush\/",
+                title: "USH",
+                description: "Essentials about USH",
+                content: " USH is a stablecoin, which is a type of cryptocurrency that is designed to be less volatile than other cryptocurrencies because they are pegged to assets that are relatively stable. USH is designed to hold a stable value relative to one US dollar. USH is crypto-backed, because it uses cryptocurrencies as collateral. Users can deposit one of the accepted collateral types to create (mint) USH. USH is over-collateralized, which means that the backing collateral always needs to have a higher value than the amount of USH in circulation. The purpose of the over-collateralization is to account for volatility. USH is decentralised. Collateral types do not have a single point of control, collateral vaults are non-custodial, anyone can mint USH, anyone can trigger a liquidation and interest rates are adjusted onchain by the system. "
+            }
+        );
+    index.add(
+            {
+                id:  2 ,
+                href: "\/docs\/protocol\/mint\/",
+                title: "Mint",
+                description: "To mint the USH stablecoin, users deposit one of the supported collateral types into the designated vault. Each vault has its own minimum health factor requirement and interest rate.\n",
+                content: "To mint the USH stablecoin, users deposit one of the supported collateral types into the designated vault. Each vault has its own minimum health factor requirement and interest rate.\n"
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
+                href: "\/docs\/protocol\/farm\/",
+                title: "Farm",
+                description: "Liquidity providers (LP’s) earn PEG tokens by providing liquidity in selected pools. PEG emissions are distributed to LP’s.\nA liquidity pool is a collection of digital assets or tokens that are locked in a smart contract to enable trading. LP’s deposit assets into the pool and in return, they receive tokens that represent their ownership of the liquidity.\nThe tokens that LP’s receive after providing liquidity are then to be deposited in a so called Gauge. PEG emissions are distributed to gauges based on vePEG voting and LP token depositors earn their share of PEG emmisions that flow to the gauge.\n",
+                content: "Liquidity providers (LP’s) earn PEG tokens by providing liquidity in selected pools. PEG emissions are distributed to LP’s.\nA liquidity pool is a collection of digital assets or tokens that are locked in a smart contract to enable trading. LP’s deposit assets into the pool and in return, they receive tokens that represent their ownership of the liquidity.\nThe tokens that LP’s receive after providing liquidity are then to be deposited in a so called Gauge. PEG emissions are distributed to gauges based on vePEG voting and LP token depositors earn their share of PEG emmisions that flow to the gauge.\n"
+            }
+        );
+    index.add(
+            {
+                id:  4 ,
+                href: "\/docs\/protocol\/lock\/",
+                title: "Lock",
+                description: "Hyperstable uses two tokens to manage its utility and governance:\nPEG (ERC-20), is distributed to liquidity providers through emissions\nvePEG (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. vePEG is protected from dilution via rebases.\nVote Escrow linkThe “ve” in vePEG stands for : vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any PEG holder can vote escrow their tokens and receive vePEG in exchange. With Hyperstable, we call this locking.\n",
+                content: "Hyperstable uses two tokens to manage its utility and governance:\nPEG (ERC-20), is distributed to liquidity providers through emissions\nvePEG (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. vePEG is protected from dilution via rebases.\nVote Escrow linkThe “ve” in vePEG stands for : vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any PEG holder can vote escrow their tokens and receive vePEG in exchange. With Hyperstable, we call this locking.\nLocking linkThe maximum lock period is 1 year, following the linear relationship shown below:\n100 PEG locked for 1 year will become 100 vePEG 100 PEG locked for 3 months will become 25 vePEG The longer the locking time, the higher the voting power of the underlying locked balance. Additional PEG tokens can be added to a Lock at any time.\nAdditionally, Hyperstable locks can be set into auto-max lock, which are treated by the protocol as being locked for the maximum duration of 1 year, and their voting power does not decay. The auto-max lock feature can be turned on and off for each lock.\n"
+            }
+        );
+    index.add(
+            {
+                id:  5 ,
+                href: "\/docs\/protocol\/vote\/",
+                title: "Vote",
+                description: "The amount of rewards per pool is decided via gauge voting. Pools receive an amount of rewards proportional to their share of the total votes. To vote, users have to Lock their PEG tokens first.\n",
+                content: "The amount of rewards per pool is decided via gauge voting. Pools receive an amount of rewards proportional to their share of the total votes. To vote, users have to Lock their PEG tokens first.\n"
+            }
+        );
+    index.add(
+            {
+                id:  6 ,
+                href: "\/docs\/protocol\/bonus\/",
+                title: "Bonus",
+                description: "Hyperstable rewards their users for actions and assigns PEG rewards via bonus. The following actions are rewarded a bonus.\nMinting linkThe USH minting bonus is a borrow incentive paid out in PEG tokens. This incentive promotes growth of the protocol by allowing borrowers to potentially offset their interest payments. 21% of the initial PEG supply will be distributed to USH minters on a weekly basis determined by a preset PEG reward-rate (tbd) per USH minted.\n",
+                content: "Hyperstable rewards their users for actions and assigns PEG rewards via bonus. The following actions are rewarded a bonus.\nMinting linkThe USH minting bonus is a borrow incentive paid out in PEG tokens. This incentive promotes growth of the protocol by allowing borrowers to potentially offset their interest payments. 21% of the initial PEG supply will be distributed to USH minters on a weekly basis determined by a preset PEG reward-rate (tbd) per USH minted.\nReferral linkThe referral bonus is a similar incentive model whereby referrers can earn PEG tokens based on the USH minted on their referral code. 21% of the initial PEG supply will be distributed to referrers on a weekly basis by a preset PEG reward-rate.\n"
+            }
+        );
+    index.add(
+            {
+                id:  7 ,
+                href: "\/docs\/protocol\/gauge\/",
+                title: "Gauge",
+                description: "A gauge is a smart contract that takes in LP tokens and rewards the depositors with PEG tokens and other additional Incentives.\nGauges are a governance mechanism that allow vePEG holders to allocate PEG Emissions via voting. Gauges make it possible for the community to self-direct the growth of the Hyperstable ecosystem by giving each vePEG token holder the power to direct liquidity provision to certain pools.\n",
+                content: "A gauge is a smart contract that takes in LP tokens and rewards the depositors with PEG tokens and other additional Incentives.\nGauges are a governance mechanism that allow vePEG holders to allocate PEG Emissions via voting. Gauges make it possible for the community to self-direct the growth of the Hyperstable ecosystem by giving each vePEG token holder the power to direct liquidity provision to certain pools.\n"
+            }
+        );
+    index.add(
+            {
+                id:  8 ,
+                href: "\/docs\/protocol\/incentivize\/",
+                title: "Incentivize",
+                description: "By incentivizing vePEG voters to vote for gauges, users or protocols who provide these incentives, can try to draw more liquidity to specific pools. More votes to a gauge means more PEG emmissions will flow to that gauge, which in turn means higher rewards for liquidity providers in the pool.\n",
+                content: "By incentivizing vePEG voters to vote for gauges, users or protocols who provide these incentives, can try to draw more liquidity to specific pools. More votes to a gauge means more PEG emmissions will flow to that gauge, which in turn means higher rewards for liquidity providers in the pool.\n"
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
+                href: "\/docs\/protocol\/interest_rates\/",
+                title: "Interest rates",
+                description: "Interest charged to borrowers is obtained as the sum of the following components:\nManual rate ($r_m$) Vault utilization rate ($r_u$) Peg rate ($r_p$) Manual rate linkThe manual interest rate is static and set by the protocol as a constant value and represents the minimum interest rate that the protocol charges.\nVault utilization rate linkHyperstable uses Morpho’s AdaptiveCurve interest rate model at the vault level, which is engineered to maintain the ratio of the borrowed asset (USH) over the supplied asset (collateral), close to a preselected target. When the (vault specific) collateral ratio is above the set target, the interest rate automatically trends towards zero.\n",
+                content: "Interest charged to borrowers is obtained as the sum of the following components:\nManual rate ($r_m$) Vault utilization rate ($r_u$) Peg rate ($r_p$) Manual rate linkThe manual interest rate is static and set by the protocol as a constant value and represents the minimum interest rate that the protocol charges.\nVault utilization rate linkHyperstable uses Morpho’s AdaptiveCurve interest rate model at the vault level, which is engineered to maintain the ratio of the borrowed asset (USH) over the supplied asset (collateral), close to a preselected target. When the (vault specific) collateral ratio is above the set target, the interest rate automatically trends towards zero.\nPeg rate linkThe purpose of the peg based interest rate is to manage supply and demand for USH and keep the stablecoin trading at one dollar. If USH is trading above one dollar, the interest rate is lowered. If USH is trading below one dollar, the interest rate is raised. Just like the vault collateralization rate, under normal circumstances (when USH trading at or above one dollar, aka at ‘‘peg’’), the peg rate trends towards zero.\nTotal interest rate linkThe total interest rate ($r$) charged to borrowers is the sum of the above.\n$$ r = r_m + r_u + r_p $$\n"
+            }
+        );
+    index.add(
+            {
+                id:  10 ,
+                href: "\/docs\/protocol\/liquidations\/",
+                title: "Liquidations",
+                description: "Loan liquidation is the process of closing a loan by repaying it with USH. A loan may be liquidated when a borrower’s health factor drops below the minimum threshold. With Hyperstable, anyone is able to (partially) repay loans that fall below the minimum health factor.\nIn practice, this means bots will be actively monitoring all loans, looking for opportunities to liquidate.\nThe liquidator receives a preset liquidation reward as a percentage of the repaid USH debt and the borrower pays a liquidation fee to the protocol as a percentage of the remaining overcollateralization at the time of the liquidation.\n",
+                content: "Loan liquidation is the process of closing a loan by repaying it with USH. A loan may be liquidated when a borrower’s health factor drops below the minimum threshold. With Hyperstable, anyone is able to (partially) repay loans that fall below the minimum health factor.\nIn practice, this means bots will be actively monitoring all loans, looking for opportunities to liquidate.\nThe liquidator receives a preset liquidation reward as a percentage of the repaid USH debt and the borrower pays a liquidation fee to the protocol as a percentage of the remaining overcollateralization at the time of the liquidation.\nThe liquidation fee is a source of revenue for the protocol that first gets transferred to a safety buffer (one per vault). The safety buffer tracks a percentage of the total USH debt in the vault, safety buffer “overflow” gets distributed to vePEG (PEG lockers) in USH.\nIn the rare case where a liquidation is unprofitable for the liquidator who calls it (and the safety buffer has insufficient funds to cover the difference), an alternate liquidation process known as “redistribution” comes into play.\nIn this -edge case- scenario, the system makes the liquidator whole by drawing the required amount of collateral from the vault and redistributes the losses between all debtors in the system relative to their share of the collateral in the vault.\n"
+            }
+        );
+    index.add(
+            {
+                id:  11 ,
+                href: "\/docs\/protocol\/health_factor\/",
+                title: "Health factor",
+                description: "A health factor measures the value of collateral in relation to the amount of a loan. A higher health factor indicates a lower risk for the borrower. A loan with more collateral than the value of the loan is considered over-collateralized, which reduces the risk of liquidation.\nThe health factor is calculated by dividing the value of the collateral by the amount of the loan. For example: a loan with a collateral value of $150 coupled with a debt of $100, produces a health factor of 1.5.\n",
+                content: "A health factor measures the value of collateral in relation to the amount of a loan. A higher health factor indicates a lower risk for the borrower. A loan with more collateral than the value of the loan is considered over-collateralized, which reduces the risk of liquidation.\nThe health factor is calculated by dividing the value of the collateral by the amount of the loan. For example: a loan with a collateral value of $150 coupled with a debt of $100, produces a health factor of 1.5.\nFor users who are unfamiliar with health factors, but familiar with the term loan-to-value: a health factor of 1.5 is the same as a loan-to-value of 0.67.\n"
+            }
+        );
+    index.add(
+            {
+                id:  12 ,
+                href: "\/docs\/protocol\/collateral_types\/",
+                title: "Collateral types",
+                description: "Hyperstable supports the following assets as collateral:\nName Contract address HYPE 0x84f108D074f0F9513421d05632D4291cEa8cdd0b wstHYPE 0xC55fAB3DDcab42B6DD2358FBDc59950F832f67Fc uBTC 0x6714cD43536E7E242923aCE3d301a3311DBca6BB uETH 0xE7CEAcCAa613d8fde4e214d7F71c85933cD1F531 ",
+                content: "Hyperstable supports the following assets as collateral:\nName Contract address HYPE 0x84f108D074f0F9513421d05632D4291cEa8cdd0b wstHYPE 0xC55fAB3DDcab42B6DD2358FBDc59950F832f67Fc uBTC 0x6714cD43536E7E242923aCE3d301a3311DBca6BB uETH 0xE7CEAcCAa613d8fde4e214d7F71c85933cD1F531 "
+            }
+        );
+    index.add(
+            {
+                id:  13 ,
+                href: "\/docs\/peg\/",
+                title: "PEG",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  14 ,
+                href: "\/docs\/peg\/token\/",
+                title: "Token",
+                description: "Hyperstable uses two tokens to manage its utility and governance:\nPEG (ERC-20), is distributed to liquidity providers through emissions vePEG (ERC-721) which is used for governance, to vote on emissions, to earn (100% of) protocol revenue from interest and liquidation fees and receive incentives. vePEG also gets protected from dilution via rebases. vePEG is represented as a (transferrable) NFT. Vote Escrow linkThe “ve” in vePEG stands for: vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any PEG holder can vote escrow their tokens and receive vePEG in exchange. With Hyperstable, we call this locking.\n",
+                content: "Hyperstable uses two tokens to manage its utility and governance:\nPEG (ERC-20), is distributed to liquidity providers through emissions vePEG (ERC-721) which is used for governance, to vote on emissions, to earn (100% of) protocol revenue from interest and liquidation fees and receive incentives. vePEG also gets protected from dilution via rebases. vePEG is represented as a (transferrable) NFT. Vote Escrow linkThe “ve” in vePEG stands for: vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any PEG holder can vote escrow their tokens and receive vePEG in exchange. With Hyperstable, we call this locking.\n"
+            }
+        );
+    index.add(
+            {
+                id:  15 ,
+                href: "\/docs\/peg\/distribution\/",
+                title: "Distribution",
+                description: "Initial supply of 500mm tokens. Distribution at launch:\nPEG (liquid) % Minting Bonus (based on USH minted) 21.0 - claimable weekly - option to claim 25% liquid or 100% max-locked Referral Bonus (Based on USH mints referred) 21.0 - claimable weekly - option to claim 25% liquid or 100% max-locked PEG liquidity pool 4.0 - 2% Fjord sale , 2% pairing Echo 1.4 vePEG (locked) % Angles 3.8 Series A reserve 9.0 Hyperstable tresury 24.8 - auto max-locked - votes for PEG liquidity pools and partner pools - market buys and max-locks PEG with revenue Hyperstable team 15.0 - auto max-locked - market buys and max-locks PEG with all earnings, first year ",
+                content: "Initial supply of 500mm tokens. Distribution at launch:\nPEG (liquid) % Minting Bonus (based on USH minted) 21.0 - claimable weekly - option to claim 25% liquid or 100% max-locked Referral Bonus (Based on USH mints referred) 21.0 - claimable weekly - option to claim 25% liquid or 100% max-locked PEG liquidity pool 4.0 - 2% Fjord sale , 2% pairing Echo 1.4 vePEG (locked) % Angles 3.8 Series A reserve 9.0 Hyperstable tresury 24.8 - auto max-locked - votes for PEG liquidity pools and partner pools - market buys and max-locks PEG with revenue Hyperstable team 15.0 - auto max-locked - market buys and max-locks PEG with all earnings, first year "
+            }
+        );
+    index.add(
+            {
+                id:  16 ,
+                href: "\/docs\/peg\/emission\/",
+                title: "Emission",
+                description: "Hyperstable seperates PEG emissions into two phases:\nPhase 1: Liftoff linkAt launch, weekly emissions are set at 0.2% of the circulating supply. Adjustments will be made per epoch if necessary.\nPhase 2: Cruise linkAfter 20 epochs the system will enter “cruise mode” and the emissions will be set at a % of circulating supply based on data from the “Liftoff” phase.\n",
+                content: "Hyperstable seperates PEG emissions into two phases:\nPhase 1: Liftoff linkAt launch, weekly emissions are set at 0.2% of the circulating supply. Adjustments will be made per epoch if necessary.\nPhase 2: Cruise linkAfter 20 epochs the system will enter “cruise mode” and the emissions will be set at a % of circulating supply based on data from the “Liftoff” phase.\n"
+            }
+        );
+    index.add(
+            {
+                id:  17 ,
+                href: "\/docs\/peg\/rebase\/",
+                title: "Rebase",
+                description: "vePEG holders receive a rebase proportional to PEG emissions and to the ratio of vePEG to PEG supply, reducing vote power dilution for vePEG.\nThe weekly rebase amount is calculated with the following formula:\n$$ w_{rb} = 0.5 w_e \\left( 1 - \\frac{s_{vePEG}}{s_{PEG}}\\right)^2 $$\nHere, the weekly rebase amount ($w_{rb}$) is proportional to the weekly emissions ($w_e$) and the ratio between locked and liquid PEG tokens. This rebase formula will reward vePEG holders most when locking rates decrease, incentivizing new lockers to step in. vePEG supply does not affect weekly emissions distributed to liquidity providers.\n",
+                content: "vePEG holders receive a rebase proportional to PEG emissions and to the ratio of vePEG to PEG supply, reducing vote power dilution for vePEG.\nThe weekly rebase amount is calculated with the following formula:\n$$ w_{rb} = 0.5 w_e \\left( 1 - \\frac{s_{vePEG}}{s_{PEG}}\\right)^2 $$\nHere, the weekly rebase amount ($w_{rb}$) is proportional to the weekly emissions ($w_e$) and the ratio between locked and liquid PEG tokens. This rebase formula will reward vePEG holders most when locking rates decrease, incentivizing new lockers to step in. vePEG supply does not affect weekly emissions distributed to liquidity providers.\n"
+            }
+        );
+    index.add(
+            {
+                id:  18 ,
+                href: "\/docs\/security\/",
+                title: "Security",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  19 ,
+                href: "\/docs\/security\/audits\/",
+                title: "Audits",
+                description: "Hyperstable’s security audits can be found here: Audits\n",
+                content: "Hyperstable’s security audits can be found here: Audits\n"
+            }
+        );
+    index.add(
+            {
+                id:  20 ,
+                href: "\/docs\/security\/bug_bounty\/",
+                title: "Bug bounty",
+                description: "Bug bounty linkcoming soon\n",
+                content: "Bug bounty linkcoming soon\n"
+            }
+        );
+    index.add(
+            {
+                id:  21 ,
+                href: "\/docs\/contracts\/",
+                title: "Contracts",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  22 ,
+                href: "\/docs\/contracts\/hyperevm\/",
+                title: "HyperEVM",
+                description: " Contract Name Contract Address USH 0x8fF0dd9f9C40a0d76eF1BcFAF5f98c1610c74Bd8 USH PRICE FEED 0xDc4ddde1EeaF64d77B23B794b89BfBe281B5Ce35 MANAGER 0x8ADf2532c86aB123228D75Eb9DA5085DC3eAf5b9 INTEREST RATE STRATEGY 0x424A449cAd8121f94feaB2607dDC2d7E66934BfB LiquidationBuffer 0x35b2200Ca9F7298Ad3BE73Bd1cbfCc20c7886578 LiquidationManager 0x8967034f7030230748ff60479ea8452190CfD114 EmissionScheduler 0x0c063Cee3715737Eb6Ac6a45783b9323d05c6F1F PEG 0x28245AB01298eaEf7933bC90d35Bd9DbCA5C89DB VeArtProxy 0xaa170b0f4f07d9eb34A0A7d0870a8f4F04663ca8 VotingEscrow 0xdB9A1bdc443dd11366b8a6dc8038144eCc4D4E23 Voter 0xF3113E4F80c84935E576CFD75F4423E9B911908A GaugeProviderV1 0x79367964c8F9B6DEb993D0a50D128500b9686583 RewardsDistributor 0x581686866E5B9F4F2D7Adc4B4f36940531283C49 Minter 0xbB16aE0b903f1a3810DE5F600EDbe8CE76a93ba1 BribeFactory 0x058855F5132b2518168e5B85cf2e44Cab57E0FF1 TokenRewardsDistributor 0x2c30a961E5B2aa618aB6A99BeEfd44CA5e7828aF InterestDistributor 0x2e6FDa4324237969F683DB2f30379919d86290d2 ",
+                content: " Contract Name Contract Address USH 0x8fF0dd9f9C40a0d76eF1BcFAF5f98c1610c74Bd8 USH PRICE FEED 0xDc4ddde1EeaF64d77B23B794b89BfBe281B5Ce35 MANAGER 0x8ADf2532c86aB123228D75Eb9DA5085DC3eAf5b9 INTEREST RATE STRATEGY 0x424A449cAd8121f94feaB2607dDC2d7E66934BfB LiquidationBuffer 0x35b2200Ca9F7298Ad3BE73Bd1cbfCc20c7886578 LiquidationManager 0x8967034f7030230748ff60479ea8452190CfD114 EmissionScheduler 0x0c063Cee3715737Eb6Ac6a45783b9323d05c6F1F PEG 0x28245AB01298eaEf7933bC90d35Bd9DbCA5C89DB VeArtProxy 0xaa170b0f4f07d9eb34A0A7d0870a8f4F04663ca8 VotingEscrow 0xdB9A1bdc443dd11366b8a6dc8038144eCc4D4E23 Voter 0xF3113E4F80c84935E576CFD75F4423E9B911908A GaugeProviderV1 0x79367964c8F9B6DEb993D0a50D128500b9686583 RewardsDistributor 0x581686866E5B9F4F2D7Adc4B4f36940531283C49 Minter 0xbB16aE0b903f1a3810DE5F600EDbe8CE76a93ba1 BribeFactory 0x058855F5132b2518168e5B85cf2e44Cab57E0FF1 TokenRewardsDistributor 0x2c30a961E5B2aa618aB6A99BeEfd44CA5e7828aF InterestDistributor 0x2e6FDa4324237969F683DB2f30379919d86290d2 "
+            }
+        );
+    index.add(
+            {
+                id:  23 ,
+                href: "\/docs\/",
+                title: "Hyperstable",
+                description: "Hyperstable is a crypto-backed, over-collateralized and decentralized stablecoin that is designed to trade at one US dollar.\nBorrowers Mint USH against supported Collateral Types Liquidity providers Farm and earn PEG tokens by providing liquidity on AMM’s like Curve and staking their LP tokens PEG holders Lock their tokens into vePEG to earn 100% of protocol revenue generated via Interest and Liquidation fees, receive Incentives, Vote on Emissions and get protected from dilution via Rebases ",
+                content: "Hyperstable is a crypto-backed, over-collateralized and decentralized stablecoin that is designed to trade at one US dollar.\nBorrowers Mint USH against supported Collateral Types Liquidity providers Farm and earn PEG tokens by providing liquidity on AMM’s like Curve and staking their LP tokens PEG holders Lock their tokens into vePEG to earn 100% of protocol revenue generated via Interest and Liquidation fees, receive Incentives, Vote on Emissions and get protected from dilution via Rebases "
+            }
+        );
+    search.addEventListener('input', show_results, true);
+
+    function show_results(){
+        const maxResult =  5 ;
+        const minlength =  0 ;
+        var searchQuery = sanitizeHTML(this.value);
+        var results = index.search(searchQuery, {limit: maxResult, enrich: true});
+
+        
+        const flatResults = new Map(); 
+        for (const result of results.flatMap(r => r.result)) {
+        if (flatResults.has(result.doc.href)) continue;
+        flatResults.set(result.doc.href, result.doc);
+        }
+
+        suggestions.innerHTML = "";
+        suggestions.classList.remove('d-none');
+
+        
+        if (searchQuery.length < minlength) {
+            const minCharMessage = document.createElement('div')
+            minCharMessage.innerHTML = `Please type at least <strong>${minlength}</strong> characters`
+            minCharMessage.classList.add("suggestion__no-results");
+            suggestions.appendChild(minCharMessage);
+            return;
+        } else {
+            
+            if (flatResults.size === 0 && searchQuery) {
+                const noResultsMessage = document.createElement('div')
+                noResultsMessage.innerHTML = "No results for" + ` "<strong>${searchQuery}</strong>"`
+                noResultsMessage.classList.add("suggestion__no-results");
+                suggestions.appendChild(noResultsMessage);
+                return;
+            }
+        }
+
+        
+        for(const [href, doc] of flatResults) {
+            const entry = document.createElement('div');
+            suggestions.appendChild(entry);
+
+            const a = document.createElement('a');
+            a.href = href;
+            entry.appendChild(a);
+
+            const title = document.createElement('span');
+            title.textContent = doc.title;
+            title.classList.add("suggestion__title");
+            a.appendChild(title);
+
+            const description = document.createElement('span');
+            description.textContent = doc.description;
+            description.classList.add("suggestion__description");
+            a.appendChild(description);
+
+            suggestions.appendChild(entry);
+
+            if(suggestions.childElementCount == maxResult) break;
+        }
+    }
+    }());
+</script>
+        
+    </body>
+</html>
