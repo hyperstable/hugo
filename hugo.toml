@@ -43,13 +43,13 @@ github_project_repo = "https://github.com/hyperstable/hyperstable.github.io"
 github_branch = "main"
 github_subdir = "content"
 
-# Enable Lunr.js offline search
+# Enable Lunr.js offline search ONLY (not Algolia)
 offlineSearch = true
 
 # Enable syntax highlighting and copy buttons
 prism_syntax_highlighting = false
 
-# KaTeX configuration - CORRECT FORMAT
+# KaTeX configuration
 [params.katex]
 enable = true
 version = "0.16.9"
@@ -66,7 +66,7 @@ breadcrumb_disable = false
 sidebar_search_disable = false
 # Set to false if you don't want to display a logo in the top nav bar
 navbar_logo = true
-# Set to true to enable the About link in footer (note: changed from footer_about_disable)
+# Set to true to enable the About link in footer
 footer_about_enable = false
 
 # Adds a H2 section titled "Feedback" to the bottom of each doc.
@@ -77,10 +77,10 @@ enable = false
 [params.ui.readingtime]
 enable = true
 
-# Search configuration - UPDATED FORMAT
-[params.search]
-# Enable Algolia DocSearch
-algolia = false
+# NO SEARCH SECTION - we're using offlineSearch instead
+# Remove this entire section:
+# [params.search]
+# algolia = false
 
 [params.links]
 # End user relevant links
