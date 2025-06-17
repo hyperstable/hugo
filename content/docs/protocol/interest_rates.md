@@ -10,9 +10,9 @@ katex: true
 
 Interest charged to borrowers is obtained as the sum of the following components:
 
-1. Manual rate ($r_m$)
-1. Vault utilization rate ($r_u$)
-2. Peg rate ($r_p$)
+1. Manual rate $r_m$
+1. Vault utilization rate $r_u$
+2. Peg rate $r_p$
 
 ### Manual rate
 
