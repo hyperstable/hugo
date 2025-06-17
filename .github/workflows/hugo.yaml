@@ -1,39 +1,11 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
-
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches:
-      - main
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-# Default to bash
-defaults:
-  run:
-    shell: bash
-
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.127.0 # Updated to a more recent, stable version
+      HUGO_VERSION: 0.127.0 # This version is fine
       HUGO_ENVIRONMENT: production
-      TZ: America/Los_Angeles # Optional: Adjust to your timezone
+      TZ: America/Los_Angeles
 
     steps:
       - name: Install Hugo CLI
@@ -41,18 +13,19 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-      - name: Install Dart Sass (if needed by your theme)
-        run: sudo snap install dart-sass
+      # --- REMOVE THIS STEP ---
+      # - name: Install Dart Sass (if needed by your theme)
+      #   run: sudo snap install dart-sass
 
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # fetch-depth: 0 is recommended for Hugo's .GitInfo functionality
+          fetch-depth: 0
 
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '^1.22' # Use a recent Go version
+          go-version: '^1.22'
 
       - name: Update Go Modules
         run: go mod tidy
@@ -64,9 +37,6 @@ jobs:
       - name: Install Node.js dependencies (if needed)
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       
-      # Caching steps are generally not needed for Go modules as they are handled by Go's own caching,
-      # but if you have other large assets, you can keep them. For simplicity, they are removed here.
-
       - name: Build with Hugo
         run: |
           hugo \
@@ -90,3 +60,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
