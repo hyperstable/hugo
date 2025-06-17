@@ -28,9 +28,6 @@ KaTeX = true
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
 
-[markup.goldmark.renderer]
-    unsafe = true
-
 [[menu.primary]]
     name  = "Hyperstable Docs"
     url = "/docs/"
