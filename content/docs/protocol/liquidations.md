@@ -7,11 +7,10 @@ lastmod: "2025-06-07T09:44:00+02:00"
 draft: false
 toc: false
 ---
-# Liquidations
 
-Loan liquidation is the process of closing a loan by repaying it with USH. A loan may be liquidated when a borrower's health factor drops below the minimum threshold. With Hyperstable, anyone is able to (partially) repay loans that fall below the minimum health factor. 
+Loan liquidation is the process of closing a loan by repaying it with USH. A loan may be liquidated when a borrower's health factor drops below the minimum threshold. With Hyperstable, anyone is able to (partially) repay loans that fall below the minimum health factor.
 
-In practice, this means bots will be actively monitoring all loans, looking for opportunities to liquidate. 
+In practice, this means bots will be actively monitoring all loans, looking for opportunities to liquidate.
 
 The liquidator receives a preset liquidation reward as a percentage of the repaid USH debt and the borrower pays a liquidation fee to the protocol as a percentage of the remaining overcollateralization at the time of the liquidation.
 

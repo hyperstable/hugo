@@ -7,7 +7,6 @@ lastmod: "2025-06-07T10:34:09+02:00"
 draft: false
 toc: false
 ---
-# PEG emissions
 
 Hyperstable seperates `PEG` emissions into two phases:
 

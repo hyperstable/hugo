@@ -7,7 +7,6 @@ lastmod: "2025-06-07T10:34:01+02:00"
 draft: false
 toc: false
 ---
-# (ve)PEG distribution
 
 Initial supply of 500mm tokens. Distribution at launch:
 

@@ -7,7 +7,6 @@ lastmod: "2025-06-07T11:14:51+02:00"
 draft: false
 toc: false
 ---
-# HyperEVM contracts
 
 | Contract Name | Contract Address |
 |:--------------|:-----------------|

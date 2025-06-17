@@ -6,7 +6,6 @@ date: "2025-06-07T09:43:21+02:00"
 lastmod: "2025-06-07T09:43:21+02:00"
 draft: false
 ---
-# Gauges
 
 A gauge is a smart contract that takes in LP tokens and rewards the depositors with `PEG` tokens and other additional Incentives.
 
