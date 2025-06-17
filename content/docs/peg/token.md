@@ -1,7 +1,6 @@
 ---
 weight: 310
 title: "Token"
-icon: "article"
 date: "2025-06-07T10:33:49+02:00"
 lastmod: "2025-06-07T10:33:49+02:00"
 draft: false

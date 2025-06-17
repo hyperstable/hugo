@@ -1,7 +1,6 @@
 ---
 weight: 170
 title: "Gauge"
-icon: "article"
 date: "2025-06-07T09:43:21+02:00"
 lastmod: "2025-06-07T09:43:21+02:00"
 draft: false

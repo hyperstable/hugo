@@ -1,8 +1,6 @@
 ---
 weight: 340
 title: "Rebase"
-icon: "article"
-date: "2025-06-07T10:34:16+02:00"
 lastmod: "2025-06-07T10:34:16+02:00"
 draft: false
 toc: false

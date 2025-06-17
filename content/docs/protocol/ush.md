@@ -1,8 +1,6 @@
 ---
 weight: 110
 title: "USH"
-description: "Essentials about USH"
-icon: "article"
 date: "2025-06-06T14:40:37+02:00"
 lastmod: "2025-06-06T14:40:37+02:00"
 draft: false

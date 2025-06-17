@@ -1,7 +1,6 @@
 ---
 weight: 220
 title: "Collateral types"
-icon: "article"
 date: "2025-06-07T09:44:18+02:00"
 lastmod: "2025-06-07T09:44:18+02:00"
 draft: false

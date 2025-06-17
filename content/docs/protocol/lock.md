@@ -1,7 +1,6 @@
 ---
 weight: 140
 title: "Lock"
-icon: "article"
 date: "2025-06-06T14:49:59+02:00"
 lastmod: "2025-06-06T14:49:59+02:00"
 draft: false

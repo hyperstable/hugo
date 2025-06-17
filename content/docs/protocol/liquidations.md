@@ -1,7 +1,6 @@
 ---
 weight: 200
 title: "Liquidations"
-icon: "article"
 date: "2025-06-07T09:44:00+02:00"
 lastmod: "2025-06-07T09:44:00+02:00"
 draft: false

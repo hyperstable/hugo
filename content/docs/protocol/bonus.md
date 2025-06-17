@@ -1,7 +1,6 @@
 ---
 weight: 160
 title: "Bonus"
-icon: "article"
 date: "2025-06-07T09:43:14+02:00"
 lastmod: "2025-06-07T09:43:14+02:00"
 draft: false

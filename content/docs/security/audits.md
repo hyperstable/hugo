@@ -1,7 +1,6 @@
 ---
 weight: 410
 title: "Audits"
-icon: "article"
 date: "2025-06-07T11:09:54+02:00"
 lastmod: "2025-06-07T11:09:54+02:00"
 draft: false

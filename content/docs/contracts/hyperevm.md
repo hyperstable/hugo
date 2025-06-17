@@ -1,7 +1,6 @@
 ---
 weight: 510
 title: "HyperEVM"
-icon: "article"
 date: "2025-06-07T11:14:51+02:00"
 lastmod: "2025-06-07T11:14:51+02:00"
 draft: false

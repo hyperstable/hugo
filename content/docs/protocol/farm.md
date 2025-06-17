@@ -1,7 +1,6 @@
 ---
 weight: 130
 title: "Farm"
-icon: "article"
 date: "2025-06-06T14:48:26+02:00"
 lastmod: "2025-06-06T14:48:26+02:00"
 draft: false

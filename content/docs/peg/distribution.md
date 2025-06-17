@@ -1,7 +1,6 @@
 ---
 weight: 320
 title: "Distribution"
-icon: "article"
 date: "2025-06-07T10:34:01+02:00"
 lastmod: "2025-06-07T10:34:01+02:00"
 draft: false

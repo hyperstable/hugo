@@ -1,7 +1,6 @@
 ---
 weight: 150
 title: "Vote"
-icon: "article"
 date: "2025-06-07T09:43:01+02:00"
 lastmod: "2025-06-07T09:43:01+02:00"
 draft: false

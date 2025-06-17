@@ -1,7 +1,6 @@
 ---
 weight: 210
 title: "Health factor"
-icon: "article"
 date: "2025-06-07T09:44:09+02:00"
 lastmod: "2025-06-07T09:44:09+02:00"
 draft: false
