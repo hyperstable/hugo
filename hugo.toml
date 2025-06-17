@@ -1,7 +1,13 @@
 baseURL = 'https://docs.hyperstable.xyz/'
 languageCode = 'en-us'
 title = 'Hyperstable'
-theme = 'lotusdocs'  # Simple theme reference
+theme = 'lotusdocs'
+
+# Still need modules for Bootstrap dependency
+[module]
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+    disable = false
 
 # This is required by the theme
 [markup.goldmark.renderer]
