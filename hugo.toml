@@ -35,6 +35,7 @@ weight = 1
 
 # Site params
 [params]
+katex = true
 copyright = "Hyperstable"
 github_repo = "https://github.com/hyperstable/hyperstable.github.io"
 github_project_repo = "https://github.com/hyperstable/hyperstable.github.io"
@@ -69,10 +70,6 @@ sidebar_search_disable = false
 navbar_logo = true
 # Set to true to disable the About link in footer
 footer_about_disable = true
-
-[params]
-# Enable KaTeX support globally
-katex = true
 
 # Adds a H2 section titled "Feedback" to the bottom of each doc.
 [params.ui.feedback]
