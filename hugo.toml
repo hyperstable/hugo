@@ -45,3 +45,6 @@ KaTeX = true
     url = "/docs/"
     identifier = "docs"
     weight = 10
+
+[params.ui]
+  opengraph = false
