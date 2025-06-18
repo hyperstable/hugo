@@ -1,0 +1,53 @@
+[book]
+title = "Hyperstable documentation"
+authors = ["Hyperstable team"]
+description = "Technical documentation for our protocol"
+language = "en"
+multilingual = false
+src = "src"
+
+[build]
+build-dir = "book"
+
+[preprocessor.index]
+
+[preprocessor.links]
+
+[output.html]
+theme = "theme"
+default-theme = "navy"
+preferred-dark-theme = "navy"
+smart-punctuation = true  # Changed from curly-quotes
+mathjax-support = true
+copy-fonts = true
+no-section-label = false
+git-repository-url = "https://github.com/hyperstable/hyperstable.github.io"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/hyperstable/hyperstable.github.io/edit/main/{path}"
+site-url = "/docs/"
+cname = "docs.hyperstable.xyz"
+favicon = "theme/favicon.ico"  # Need full path
+additional-css = ["theme/css/custom.css"]  # Need full path
+additional-js = ["theme/js/custom.js"]  # Need full path
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.playground]
+editable = false
+copyable = true
+copy-js = true
+line-numbers = false
+
+[output.html.search]
+enable = true
+limit-results = 30
+teaser-word-count = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3
+copy-js = true

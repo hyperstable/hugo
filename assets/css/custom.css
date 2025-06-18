@@ -1,7 +1,0 @@
-.index-content h1 {
-  margin-bottom: 2rem; /* Increase space under h1 */
-}
-
-.index-content h1 + ul {
-  margin-top: 2rem; /* Optional: ensure bullet list isn't flush with heading */
-}

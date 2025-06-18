@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Hyperstable documentation</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Technical documentation for our protocol">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/css/custom.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox">
+              <div class="sidebar-logo">
+                <a href="">
+                    <img src="logo.svg" alt="Logo">
+                </a>
+              </div>
+            </mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Hyperstable documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/hyperstable/hyperstable.github.io" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Welcome to the Hyperstable documentation. This guide provides comprehensive technical information about our decentralized stablecoin protocol and its ecosystem.</p>
+<h2 id="what-is-hyperstable"><a class="header" href="#what-is-hyperstable">What is Hyperstable?</a></h2>
+<p>Hyperstable is a decentralized finance (DeFi) protocol that enables users to mint <strong>USH</strong>, an over-collateralized stablecoin designed to maintain a stable value relative to one US dollar. The protocol combines battle-tested DeFi mechanics with innovative features to create a robust and sustainable stablecoin ecosystem.</p>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<h3 id="ush-stablecoin"><a class="header" href="#ush-stablecoin">USH Stablecoin</a></h3>
+<ul>
+<li><strong>Decentralized and crypto-backed</strong>: USH is backed by a diverse set of cryptocurrency collateral</li>
+<li><strong>Over-collateralized</strong>: All USH in circulation is backed by collateral worth more than the minted amount</li>
+<li><strong>Stable by design</strong>: Multiple mechanisms work together to maintain USH’s peg to $1</li>
+</ul>
+<h3 id="collateral-system"><a class="header" href="#collateral-system">Collateral System</a></h3>
+<ul>
+<li><strong>Multiple collateral types</strong>: Support for HYPE, wstHYPE, uBTC, and uETH</li>
+<li><strong>Isolated vaults</strong>: Each collateral type has its own risk parameters</li>
+<li><strong>Dynamic interest rates</strong>: Rates adjust based on utilization, peg stability, and protocol parameters</li>
+</ul>
+<h3 id="peg-token--governance"><a class="header" href="#peg-token--governance">PEG Token &amp; Governance</a></h3>
+<ul>
+<li><strong>Dual token model</strong>: PEG for liquidity incentives, vePEG for governance</li>
+<li><strong>Vote escrow mechanism</strong>: Lock PEG to receive vePEG and participate in governance</li>
+<li><strong>Revenue sharing</strong>: vePEG holders earn 100% of protocol revenue from interest and liquidation fees</li>
+<li><strong>Anti-dilution rebases</strong>: vePEG holders are protected from supply dilution</li>
+</ul>
+<h3 id="liquidity--incentives"><a class="header" href="#liquidity--incentives">Liquidity &amp; Incentives</a></h3>
+<ul>
+<li><strong>Gauge voting</strong>: vePEG holders direct PEG emissions to liquidity pools</li>
+<li><strong>Farming rewards</strong>: Liquidity providers earn PEG tokens</li>
+<li><strong>Bribe marketplace</strong>: External incentives to influence gauge votes</li>
+<li><strong>Sustainable emissions</strong>: Carefully designed tokenomics for long-term stability</li>
+</ul>
+<h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
+<ol>
+<li><strong>Mint USH</strong>: Deposit supported collateral to mint USH stablecoins</li>
+<li><strong>Manage positions</strong>: Monitor health factors and manage collateralization ratios</li>
+<li><strong>Provide liquidity</strong>: Supply liquidity to USH pairs and earn PEG rewards</li>
+<li><strong>Lock for governance</strong>: Convert PEG to vePEG to vote and earn protocol revenue</li>
+<li><strong>Direct emissions</strong>: Vote on gauges to direct liquidity incentives</li>
+</ol>
+<h2 id="architecture-overview"><a class="header" href="#architecture-overview">Architecture Overview</a></h2>
+<p>The Hyperstable protocol consists of several interconnected components:</p>
+<ul>
+<li><strong>Core Protocol</strong>: USH minting, collateral management, and liquidations</li>
+<li><strong>PEG Tokenomics</strong>: Emission scheduling, vote escrow, and rebasing</li>
+<li><strong>Gauge System</strong>: Liquidity incentives and voting mechanisms</li>
+<li><strong>Risk Management</strong>: Interest rate models, liquidation system, and safety buffers</li>
+</ul>
+<h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<p>This documentation is organized into four main sections:</p>
+<ul>
+<li><strong><a href="./protocol/ush.html">Protocol</a></strong>: Core mechanics of USH, minting, and risk management</li>
+<li><strong><a href="./peg/token.html">PEG</a></strong>: Tokenomics, distribution, and governance features</li>
+<li><strong><a href="./security/audits.html">Security</a></strong>: Audit reports and security practices</li>
+<li><strong><a href="./contracts/hyperevm.html">Contracts</a></strong>: Deployed contract addresses and technical details</li>
+</ul>
+<p>Whether you’re a user looking to mint USH, a liquidity provider seeking rewards, or a developer building on Hyperstable, this documentation provides all the information you need to understand and interact with the protocol.</p>
+<h2 id="community--support"><a class="header" href="#community--support">Community &amp; Support</a></h2>
+<p>Join our community to stay updated and get support:</p>
+<ul>
+<li>Discord: <a href="https://discord.hyperstable.xyz/">Join our server</a></li>
+<li>Twitter: <a href="https://x.com/hyperstableX">@HyperstableX</a></li>
+<li>GitHub: <a href="https://github.com/hyperstable">hyperstable</a></li>
+</ul>
+<hr />
+<p><em>Hyperstable is an experimental protocol. Users should understand the risks involved with DeFi protocols, including smart contract risk, liquidation risk, and potential loss of funds. Always do your own research.</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ush"><a class="header" href="#ush">USH</a></h1>
+<ul>
+<li>USH is a stablecoin, which is a type of cryptocurrency that is designed to be less volatile than other cryptocurrencies because they are pegged to assets that are relatively stable. USH is designed to hold a stable value relative to one US dollar.</li>
+<li>USH is crypto-backed, because it uses cryptocurrencies as collateral. Users can deposit one of the accepted collateral types to create (mint) USH.</li>
+<li>USH is over-collateralized, which means that the backing collateral always needs to have a higher value than the amount of USH in circulation. The purpose of the over-collateralization is to account for volatility.</li>
+<li>USH is decentralised. Collateral types do not have a single point of control, collateral vaults are non-custodial, anyone can mint USH, anyone can trigger a liquidation and interest rates are adjusted onchain by the system.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mint"><a class="header" href="#mint">Mint</a></h1>
+<p>To mint the USH stablecoin, users deposit one of the supported collateral types into the designated vault. Each vault has its own minimum health factor requirement and interest rate.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="farm"><a class="header" href="#farm">Farm</a></h1>
+<p>Liquidity providers (LP’s) earn <code>PEG</code> tokens by providing liquidity in selected pools. <code>PEG</code> emissions are distributed to LP’s.</p>
+<p>A liquidity pool is a collection of digital assets or tokens that are locked in a smart contract to enable trading. LP’s deposit assets into the pool and in return, they receive tokens that represent their ownership of the liquidity.</p>
+<p>The tokens that LP’s receive after providing liquidity are then to be deposited in a so called Gauge. <code>PEG</code> emissions are distributed to gauges based on <code>vePEG</code> voting and LP token depositors earn their share of  <code>PEG</code> emmisions that flow to the gauge.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lock"><a class="header" href="#lock">Lock</a></h1>
+<p>Hyperstable uses two tokens to manage its utility and governance:</p>
+<ul>
+<li>
+<p><code>PEG</code> (ERC-20), is distributed to liquidity providers through emissions</p>
+</li>
+<li>
+<p><code>vePEG</code> (ERC-721), is used for governance, to vote on emissions, to earn all protocol revenue generated via interest and receive incentives. <code>vePEG</code> is protected from dilution via rebases.</p>
+</li>
+</ul>
+<h2 id="vote-escrow"><a class="header" href="#vote-escrow">Vote Escrow</a></h2>
+<p>The “ve” in <code>vePEG</code> stands for : vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any <code>PEG</code> holder can vote escrow their tokens and receive <code>vePEG</code> in exchange. With Hyperstable, we call this locking.</p>
+<h2 id="locking"><a class="header" href="#locking">Locking</a></h2>
+<p>The maximum lock period is 1 year, following the linear relationship shown below:</p>
+<ul>
+<li>100 <code>PEG</code> locked for 1 year will become 100 <code>vePEG</code></li>
+<li>100 <code>PEG</code> locked for 3 months will become 25 <code>vePEG</code></li>
+</ul>
+<p>The longer the locking time, the higher the voting power of the underlying locked balance. Additional <code>PEG</code> tokens can be added to a Lock at any time.</p>
+<p>Additionally, Hyperstable locks can be set into auto-max lock, which are treated by the protocol as being locked for the maximum duration of 1 year, and their voting power does not decay. The auto-max lock feature can be turned on and off for each lock.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vote"><a class="header" href="#vote">Vote</a></h1>
+<p>The amount of rewards per pool is decided via gauge voting. Pools receive an amount of rewards proportional to their share of the total votes. To vote, users have to Lock their <code>PEG</code> tokens first.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bonus"><a class="header" href="#bonus">Bonus</a></h1>
+<p>Hyperstable rewards their users for actions and assigns <code>PEG</code> rewards via bonus. The following actions are rewarded a bonus.</p>
+<h2 id="minting"><a class="header" href="#minting">Minting</a></h2>
+<p>The USH minting bonus is a borrow incentive paid out in <code>PEG</code> tokens. This incentive promotes growth of the protocol by allowing borrowers to potentially offset their interest payments. 21% of the initial <code>PEG</code> supply will be distributed to USH minters on a weekly basis determined by a preset <code>PEG</code> reward-rate (tbd) per USH minted.</p>
+<h2 id="referral"><a class="header" href="#referral">Referral</a></h2>
+<p>The referral bonus is a similar incentive model whereby referrers can earn <code>PEG</code> tokens based on the USH minted on their referral code. 21% of the initial <code>PEG</code> supply will be distributed to referrers on a weekly basis by a preset <code>PEG</code> reward-rate.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gauges"><a class="header" href="#gauges">Gauges</a></h1>
+<p>A gauge is a smart contract that takes in LP tokens and rewards the depositors with <code>PEG</code> tokens and other additional Incentives.</p>
+<p>Gauges are a governance mechanism that allow <code>vePEG</code> holders to allocate <code>PEG</code> Emissions via voting. Gauges make it possible for the community to self-direct the growth of the Hyperstable ecosystem by giving each <code>vePEG</code> token holder the power to direct liquidity provision to certain pools.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="incentives"><a class="header" href="#incentives">Incentives</a></h1>
+<p>By incentivizing <code>vePEG</code> voters to vote for gauges, users or protocols who provide these incentives, can try to draw more liquidity to specific pools. More votes to a gauge means more <code>PEG</code> emmissions will flow to that gauge, which in turn means higher rewards for liquidity providers in the pool.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="interest-rates"><a class="header" href="#interest-rates">Interest rates</a></h1>
+<p>Interest charged to borrowers is obtained as the sum of the following components:</p>
+<ol>
+<li>Manual rate \(r_m\)</li>
+<li>Vault utilization rate \(r_u\)</li>
+<li>Peg rate \(r_p\)</li>
+</ol>
+<h3 id="manual-rate"><a class="header" href="#manual-rate">Manual rate</a></h3>
+<p>The manual interest rate is static and set by the protocol as a constant value and represents the minimum interest rate that the protocol charges.</p>
+<h3 id="vault-utilization-rate"><a class="header" href="#vault-utilization-rate">Vault utilization rate</a></h3>
+<p>Hyperstable uses Morpho’s AdaptiveCurve interest rate model at the vault level, which is engineered to maintain the ratio of the borrowed asset (USH) over the supplied asset (collateral), close to a preselected target. When the (vault specific) collateral ratio is above the set target, the interest rate automatically trends towards zero.</p>
+<h3 id="peg-rate"><a class="header" href="#peg-rate">Peg rate</a></h3>
+<p>The purpose of the peg based interest rate is to manage supply and demand for USH and keep the stablecoin trading at one dollar. If USH is trading above one dollar, the interest rate is lowered. If USH is trading below one dollar, the interest rate is raised. Just like the vault collateralization rate, under normal circumstances (when USH trading at or above one dollar, aka at ’‘peg’’), the peg rate trends towards zero.</p>
+<h3 id="total-interest-rate"><a class="header" href="#total-interest-rate">Total interest rate</a></h3>
+<p>The total interest rate \(r\) charged to borrowers is the sum of the above.</p>
+<p>\( r = r_m + r_u + r_p \)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="liquidations"><a class="header" href="#liquidations">Liquidations</a></h1>
+<p>Loan liquidation is the process of closing a loan by repaying it with USH. A loan may be liquidated when a borrower’s health factor drops below the minimum threshold. With Hyperstable, anyone is able to (partially) repay loans that fall below the minimum health factor.</p>
+<p>In practice, this means bots will be actively monitoring all loans, looking for opportunities to liquidate.</p>
+<p>The liquidator receives a preset liquidation reward as a percentage of the repaid USH debt and the borrower pays a liquidation fee to the protocol as a percentage of the remaining overcollateralization at the time of the liquidation.</p>
+<p>The liquidation fee is a source of revenue for the protocol that first gets transferred to a safety buffer (one per vault). The safety buffer tracks a percentage of the total USH debt in the vault, safety buffer “overflow” gets distributed to <code>vePEG</code> (<code>PEG</code> lockers) in USH.</p>
+<p>In the rare case where a liquidation is unprofitable for the liquidator who calls it (and the safety buffer has insufficient funds to cover the difference), an alternate liquidation process known as “redistribution” comes into play.</p>
+<p>In this -edge case- scenario, the system makes the liquidator whole by drawing the required amount of collateral from the vault and redistributes the losses between all debtors in the system relative to their share of the collateral in the vault.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="health-factor"><a class="header" href="#health-factor">Health factor</a></h1>
+<p>A health factor measures the value of collateral in relation to the amount of a loan. A higher health factor indicates a lower risk for the borrower. A loan with more collateral than the value of the loan is considered over-collateralized, which reduces the risk of liquidation.</p>
+<p>The health factor is calculated by dividing the value of the collateral by the amount of the loan. For example: a loan with a collateral value of <code>$150</code> coupled with a debt of <code>$100</code>, produces a health factor of 1.5.</p>
+<p>For users who are unfamiliar with health factors, but familiar with the term loan-to-value: a health factor of 1.5 is the same as a loan-to-value of 0.67.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="collateral-types"><a class="header" href="#collateral-types">Collateral types</a></h1>
+<p>Hyperstable supports the following assets as collateral:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Name</th><th style="text-align: left">Contract address</th></tr></thead><tbody>
+<tr><td style="text-align: left">HYPE</td><td style="text-align: left"><code>0x84f108D074f0F9513421d05632D4291cEa8cdd0b</code></td></tr>
+<tr><td style="text-align: left">wstHYPE</td><td style="text-align: left"><code>0xC55fAB3DDcab42B6DD2358FBDc59950F832f67Fc</code></td></tr>
+<tr><td style="text-align: left">uBTC</td><td style="text-align: left"><code>0x6714cD43536E7E242923aCE3d301a3311DBca6BB</code></td></tr>
+<tr><td style="text-align: left">uETH</td><td style="text-align: left"><code>0xE7CEAcCAa613d8fde4e214d7F71c85933cD1F531</code></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="tokens"><a class="header" href="#tokens">Tokens</a></h1>
+<p>Hyperstable uses two tokens to manage its utility and governance:</p>
+<ul>
+<li><code>PEG</code> (ERC-20), is distributed to liquidity providers through emissions</li>
+<li><code>vePEG</code> (ERC-721) which is used for governance, to vote on emissions, to earn (100% of) protocol revenue from interest and liquidation fees and receive incentives. <code>vePEG</code> also gets protected from dilution via rebases.  <code>vePEG</code> is represented as a (transferrable) NFT.</li>
+</ul>
+<h3 id="vote-escrow-1"><a class="header" href="#vote-escrow-1">Vote Escrow</a></h3>
+<p>The “ve” in <code>vePEG</code> stands for: vote escrow, which is a mechanism used in decentralized governance to ensure fairness and transparency in decision-making. Any <code>PEG</code> holder can vote escrow their tokens and receive <code>vePEG</code> in exchange. With Hyperstable, we call this locking.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distribution"><a class="header" href="#distribution">Distribution</a></h1>
+<p>Initial supply of 500mm tokens. Distribution at launch:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"><strong><code>PEG</code> (liquid)</strong></th><th style="text-align: left">%</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Minting Bonus (based on USH minted)</strong></td><td style="text-align: left">21.0</td></tr>
+<tr><td style="text-align: left">- claimable weekly</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">- option to claim 25% liquid or 100% max-locked</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><strong>Referral Bonus (Based on USH mints referred)</strong></td><td style="text-align: left">21.0</td></tr>
+<tr><td style="text-align: left">- claimable weekly</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">- option to claim 25% liquid or 100% max-locked</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><strong><code>PEG</code> liquidity pool</strong></td><td style="text-align: left">4.0</td></tr>
+<tr><td style="text-align: left">- 2% Fjord sale , 2% pairing</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><strong>Echo</strong></td><td style="text-align: left">1.4</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><strong><code>vePEG</code> (locked)</strong></td><td style="text-align: left">%</td></tr>
+<tr><td style="text-align: left"><strong>Angles</strong></td><td style="text-align: left">3.8</td></tr>
+<tr><td style="text-align: left"><strong>Series A reserve</strong></td><td style="text-align: left">9.0</td></tr>
+<tr><td style="text-align: left"><strong>Hyperstable tresury</strong></td><td style="text-align: left">24.8</td></tr>
+<tr><td style="text-align: left">- auto max-locked</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">- votes for <code>PEG</code> liquidity pools and partner pools</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">- market buys and max-locks <code>PEG</code> with revenue</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><strong>Hyperstable team</strong></td><td style="text-align: left">15.0</td></tr>
+<tr><td style="text-align: left">- auto max-locked</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">- market buys and max-locks <code>PEG</code> with all earnings, first year</td><td style="text-align: left"></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="emissions"><a class="header" href="#emissions">Emissions</a></h1>
+<p>Hyperstable seperates <code>PEG</code> emissions into two phases:</p>
+<h2 id="phase-1-liftoff"><a class="header" href="#phase-1-liftoff">Phase 1: Liftoff</a></h2>
+<p>At launch, weekly emissions are set at 0.2% of the circulating supply.
+Adjustments will be made per epoch if necessary.</p>
+<h2 id="phase-2-cruise"><a class="header" href="#phase-2-cruise">Phase 2: Cruise</a></h2>
+<p>After 20 epochs the system will enter “cruise mode” and the emissions will be set at a % of circulating supply based on data from the “Liftoff” phase.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rebase"><a class="header" href="#rebase">Rebase</a></h1>
+<p><code>vePEG</code> holders receive a rebase proportional to <code>PEG</code> emissions and to the ratio of <code>vePEG</code> to <code>PEG</code> supply, reducing vote power dilution for <code>vePEG</code>.</p>
+<p>The weekly rebase amount is calculated with the following formula:</p>
+<p>$$
+w_{rb} = 0.5 w_e \left( 1 - \frac{s_{vePEG}}{s_{PEG}}\right)^2
+$$</p>
+<p>Here, the weekly rebase amount ($w_{rb}$) is proportional to the weekly emissions ($w_e$) and the ratio between locked and liquid <code>PEG</code> tokens.
+This rebase formula will reward <code>vePEG</code> holders most when locking rates decrease, incentivizing new lockers to step in. <code>vePEG</code> supply does not affect weekly emissions distributed to liquidity providers.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="audits"><a class="header" href="#audits">Audits</a></h1>
+<p>Hyperstable’s security audits can be found here: <a href="https://github.com/hyperstable/audits">Audits</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bug-bounty"><a class="header" href="#bug-bounty">Bug bounty</a></h1>
+<p>coming soon</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hyperevm"><a class="header" href="#hyperevm">HyperEVM</a></h1>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Contract Name</th><th style="text-align: left">Contract Address</th></tr></thead><tbody>
+<tr><td style="text-align: left">USH</td><td style="text-align: left"><code>0x8fF0dd9f9C40a0d76eF1BcFAF5f98c1610c74Bd8</code></td></tr>
+<tr><td style="text-align: left">USH PRICE FEED</td><td style="text-align: left"><code>0xDc4ddde1EeaF64d77B23B794b89BfBe281B5Ce35</code></td></tr>
+<tr><td style="text-align: left">MANAGER</td><td style="text-align: left"><code>0x8ADf2532c86aB123228D75Eb9DA5085DC3eAf5b9</code></td></tr>
+<tr><td style="text-align: left">INTEREST RATE STRATEGY</td><td style="text-align: left"><code>0x424A449cAd8121f94feaB2607dDC2d7E66934BfB</code></td></tr>
+<tr><td style="text-align: left">LiquidationBuffer</td><td style="text-align: left"><code>0x35b2200Ca9F7298Ad3BE73Bd1cbfCc20c7886578</code></td></tr>
+<tr><td style="text-align: left">LiquidationManager</td><td style="text-align: left"><code>0x8967034f7030230748ff60479ea8452190CfD114</code></td></tr>
+<tr><td style="text-align: left">EmissionScheduler</td><td style="text-align: left"><code>0x0c063Cee3715737Eb6Ac6a45783b9323d05c6F1F</code></td></tr>
+<tr><td style="text-align: left">PEG</td><td style="text-align: left"><code>0x28245AB01298eaEf7933bC90d35Bd9DbCA5C89DB</code></td></tr>
+<tr><td style="text-align: left">VeArtProxy</td><td style="text-align: left"><code>0xaa170b0f4f07d9eb34A0A7d0870a8f4F04663ca8</code></td></tr>
+<tr><td style="text-align: left">VotingEscrow</td><td style="text-align: left"><code>0xdB9A1bdc443dd11366b8a6dc8038144eCc4D4E23</code></td></tr>
+<tr><td style="text-align: left">Voter</td><td style="text-align: left"><code>0xF3113E4F80c84935E576CFD75F4423E9B911908A</code></td></tr>
+<tr><td style="text-align: left">GaugeProviderV1</td><td style="text-align: left"><code>0x79367964c8F9B6DEb993D0a50D128500b9686583</code></td></tr>
+<tr><td style="text-align: left">RewardsDistributor</td><td style="text-align: left"><code>0x581686866E5B9F4F2D7Adc4B4f36940531283C49</code></td></tr>
+<tr><td style="text-align: left">Minter</td><td style="text-align: left"><code>0xbB16aE0b903f1a3810DE5F600EDbe8CE76a93ba1</code></td></tr>
+<tr><td style="text-align: left">BribeFactory</td><td style="text-align: left"><code>0x058855F5132b2518168e5B85cf2e44Cab57E0FF1</code></td></tr>
+<tr><td style="text-align: left">TokenRewardsDistributor</td><td style="text-align: left"><code>0x2c30a961E5B2aa618aB6A99BeEfd44CA5e7828aF</code></td></tr>
+<tr><td style="text-align: left">InterestDistributor</td><td style="text-align: left"><code>0x2e6FDa4324237969F683DB2f30379919d86290d2</code></td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="theme/js/custom.js"></script>
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

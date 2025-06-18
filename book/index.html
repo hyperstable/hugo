@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - Hyperstable documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Technical documentation for our protocol">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/css/custom.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox">
+              <div class="sidebar-logo">
+                <a href="">
+                    <img src="logo.svg" alt="Logo">
+                </a>
+              </div>
+            </mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Hyperstable documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/hyperstable/hyperstable.github.io" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/hyperstable/hyperstable.github.io/edit/main/src/introduction.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Welcome to the Hyperstable documentation. This guide provides comprehensive technical information about our decentralized stablecoin protocol and its ecosystem.</p>
+<h2 id="what-is-hyperstable"><a class="header" href="#what-is-hyperstable">What is Hyperstable?</a></h2>
+<p>Hyperstable is a decentralized finance (DeFi) protocol that enables users to mint <strong>USH</strong>, an over-collateralized stablecoin designed to maintain a stable value relative to one US dollar. The protocol combines battle-tested DeFi mechanics with innovative features to create a robust and sustainable stablecoin ecosystem.</p>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<h3 id="ush-stablecoin"><a class="header" href="#ush-stablecoin">USH Stablecoin</a></h3>
+<ul>
+<li><strong>Decentralized and crypto-backed</strong>: USH is backed by a diverse set of cryptocurrency collateral</li>
+<li><strong>Over-collateralized</strong>: All USH in circulation is backed by collateral worth more than the minted amount</li>
+<li><strong>Stable by design</strong>: Multiple mechanisms work together to maintain USH’s peg to $1</li>
+</ul>
+<h3 id="collateral-system"><a class="header" href="#collateral-system">Collateral System</a></h3>
+<ul>
+<li><strong>Multiple collateral types</strong>: Support for HYPE, wstHYPE, uBTC, and uETH</li>
+<li><strong>Isolated vaults</strong>: Each collateral type has its own risk parameters</li>
+<li><strong>Dynamic interest rates</strong>: Rates adjust based on utilization, peg stability, and protocol parameters</li>
+</ul>
+<h3 id="peg-token--governance"><a class="header" href="#peg-token--governance">PEG Token &amp; Governance</a></h3>
+<ul>
+<li><strong>Dual token model</strong>: PEG for liquidity incentives, vePEG for governance</li>
+<li><strong>Vote escrow mechanism</strong>: Lock PEG to receive vePEG and participate in governance</li>
+<li><strong>Revenue sharing</strong>: vePEG holders earn 100% of protocol revenue from interest and liquidation fees</li>
+<li><strong>Anti-dilution rebases</strong>: vePEG holders are protected from supply dilution</li>
+</ul>
+<h3 id="liquidity--incentives"><a class="header" href="#liquidity--incentives">Liquidity &amp; Incentives</a></h3>
+<ul>
+<li><strong>Gauge voting</strong>: vePEG holders direct PEG emissions to liquidity pools</li>
+<li><strong>Farming rewards</strong>: Liquidity providers earn PEG tokens</li>
+<li><strong>Bribe marketplace</strong>: External incentives to influence gauge votes</li>
+<li><strong>Sustainable emissions</strong>: Carefully designed tokenomics for long-term stability</li>
+</ul>
+<h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
+<ol>
+<li><strong>Mint USH</strong>: Deposit supported collateral to mint USH stablecoins</li>
+<li><strong>Manage positions</strong>: Monitor health factors and manage collateralization ratios</li>
+<li><strong>Provide liquidity</strong>: Supply liquidity to USH pairs and earn PEG rewards</li>
+<li><strong>Lock for governance</strong>: Convert PEG to vePEG to vote and earn protocol revenue</li>
+<li><strong>Direct emissions</strong>: Vote on gauges to direct liquidity incentives</li>
+</ol>
+<h2 id="architecture-overview"><a class="header" href="#architecture-overview">Architecture Overview</a></h2>
+<p>The Hyperstable protocol consists of several interconnected components:</p>
+<ul>
+<li><strong>Core Protocol</strong>: USH minting, collateral management, and liquidations</li>
+<li><strong>PEG Tokenomics</strong>: Emission scheduling, vote escrow, and rebasing</li>
+<li><strong>Gauge System</strong>: Liquidity incentives and voting mechanisms</li>
+<li><strong>Risk Management</strong>: Interest rate models, liquidation system, and safety buffers</li>
+</ul>
+<h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<p>This documentation is organized into four main sections:</p>
+<ul>
+<li><strong><a href="./protocol/ush.html">Protocol</a></strong>: Core mechanics of USH, minting, and risk management</li>
+<li><strong><a href="./peg/token.html">PEG</a></strong>: Tokenomics, distribution, and governance features</li>
+<li><strong><a href="./security/audits.html">Security</a></strong>: Audit reports and security practices</li>
+<li><strong><a href="./contracts/hyperevm.html">Contracts</a></strong>: Deployed contract addresses and technical details</li>
+</ul>
+<p>Whether you’re a user looking to mint USH, a liquidity provider seeking rewards, or a developer building on Hyperstable, this documentation provides all the information you need to understand and interact with the protocol.</p>
+<h2 id="community--support"><a class="header" href="#community--support">Community &amp; Support</a></h2>
+<p>Join our community to stay updated and get support:</p>
+<ul>
+<li>Discord: <a href="https://discord.hyperstable.xyz/">Join our server</a></li>
+<li>Twitter: <a href="https://x.com/hyperstableX">@HyperstableX</a></li>
+<li>GitHub: <a href="https://github.com/hyperstable">hyperstable</a></li>
+</ul>
+<hr />
+<p><em>Hyperstable is an experimental protocol. Users should understand the risks involved with DeFi protocols, including smart contract risk, liquidation risk, and potential loss of funds. Always do your own research.</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="protocol/ush.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="protocol/ush.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="theme/js/custom.js"></script>
+
+
+    </div>
+    </body>
+</html>
