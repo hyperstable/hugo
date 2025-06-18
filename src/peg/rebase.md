@@ -8,5 +8,5 @@ $$
 w_{rb} = 0.5 w_e \left( 1 - \frac{s_{vePEG}}{s_{PEG}}\right)^2
 $$
 
-Here, the weekly rebase amount ($w_{rb}$) is proportional to the weekly emissions ($w_e$) and the ratio between locked and liquid `PEG` tokens.
+Here, the weekly rebase amount \\(w_{rb}\\) is proportional to the weekly emissions ($w_e$) and the ratio between locked and liquid `PEG` tokens.
 This rebase formula will reward `vePEG` holders most when locking rates decrease, incentivizing new lockers to step in. `vePEG` supply does not affect weekly emissions distributed to liquidity providers.
